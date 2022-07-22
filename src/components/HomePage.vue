@@ -20,10 +20,6 @@ export default {
 </script>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-}
 
 .content {
   display: flex;
@@ -34,9 +30,9 @@ export default {
 
 .home_image {
   display: flex;
-  width: 500px;
+  width: 45%;
   position: absolute;
-  top: 20%;
+  top: 10%;
   right: 10%;
   z-index: -2;
 }

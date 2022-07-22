@@ -18,34 +18,38 @@ export default {
 
 <style>
 .nav {
-  background-color: #2d1457;
+  background-color: #49006B;
   overflow: hidden;
   padding: 12px;
 }
 .nav_picker {
   float: right;
-  font-family: "Syne";
+  font-family: 'Syne', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  margin-right: 2%;
+  margin-right: 1%;
+  margin-left: 1%;
   margin-top: 0.4%;
   text-transform: uppercase;
   color: #ffffff;
+  user-select:none;
 }
 
 .nav_name {
   float: left;
-  font-family: "Syne";
+  font-family: 'Syne', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 24px;
-  margin-left: 2%;
+  margin-left: 1%;
+  margin-right: 1%;
   margin-top: 0.4%;
   text-transform: uppercase;
   color: #ffffff;
+  user-select:none;
 }
 .nav_link {
   color: #ffffff;

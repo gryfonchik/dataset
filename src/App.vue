@@ -11,10 +11,18 @@ export default {
 </script>
 
 <style>
-  body {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
   height: 100%;
   width: 100%;
-  background-size: cover;
-  background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+  overscroll-behavior-y: none;
+}
+  body {
+    display: block;
+  background: linear-gradient(180deg, #7D44A9 0%, #230C35 100%) no-repeat;
 }
 </style>
