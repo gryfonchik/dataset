@@ -2,7 +2,7 @@
   <div class="nav">
     <div class="nav_name">название проекта</div>
     <div class="nav_name">
-      <router-link class="nav_link" to="/">проекты</router-link>
+      <router-link class="nav_link" to="project">проекты</router-link>
     </div>
     <nav class="nav_picker">
       <router-link class="nav_link" to="/">вход</router-link>
@@ -20,7 +20,8 @@ export default {
 .nav {
   background-color: #49006B;
   overflow: hidden;
-  padding: 12px;
+  padding: 20px;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
 }
 .nav_picker {
   float: right;
@@ -31,7 +32,6 @@ export default {
   line-height: 24px;
   margin-right: 1%;
   margin-left: 1%;
-  margin-top: 0.4%;
   text-transform: uppercase;
   color: #ffffff;
   user-select:none;
@@ -46,7 +46,6 @@ export default {
   line-height: 24px;
   margin-left: 1%;
   margin-right: 1%;
-  margin-top: 0.4%;
   text-transform: uppercase;
   color: #ffffff;
   user-select:none;

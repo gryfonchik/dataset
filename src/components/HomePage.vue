@@ -44,7 +44,7 @@ export default {
   left: 10%;
   top: 30%;
 
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
