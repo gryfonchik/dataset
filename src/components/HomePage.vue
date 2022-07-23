@@ -1,5 +1,4 @@
 <template>
-<Header />
   <div class="content">
     <p class="text">
       что то о проекте <br />
@@ -10,12 +9,8 @@
 </template>
 
 <script>
-import Header from '../layout/Header.vue'
 export default {
   name: 'HomePage',
-  components: {
-    Header
-  }
 }
 </script>
 
@@ -43,7 +38,6 @@ export default {
   height: 40%;
   left: 10%;
   top: 30%;
-
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;

@@ -4,54 +4,55 @@
     <div class="nav_name">
       <router-link class="nav_link" to="project">проекты</router-link>
     </div>
-    <nav class="nav_picker">
+    <!--<div class="nav_logout">
       <router-link class="nav_link" to="/">вход</router-link>
-    </nav>
+    </div>-->
   </div>
 </template>
 
 <script>
+import Dropdown from "./Dropdown.vue";
+
 export default {
   name: "Header",
+  components: {
+    Dropdown,
+  },
 };
 </script>
 
 <style>
 .nav {
-  background-color: #49006B;
+  background-color: #49006b;
   overflow: hidden;
-  padding: 20px;
+  padding-top: 22px;
+  padding-block-end: 22px;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
-}
-.nav_picker {
-  float: right;
-  font-family: 'Syne', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
-  margin-right: 1%;
-  margin-left: 1%;
-  text-transform: uppercase;
-  color: #ffffff;
-  user-select:none;
-}
-
-.nav_name {
-  float: left;
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 24px;
-  margin-left: 1%;
-  margin-right: 1%;
   text-transform: uppercase;
   color: #ffffff;
-  user-select:none;
+  user-select: none;
+}
+.nav_logout {
+  float: right;
+  margin-right: 56px;
+}
+
+
+.nav_name {
+  float: left;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .nav_link {
   color: #ffffff;
   text-decoration: none;
+}
+.nav_link:hover {
+  color: #cacfda;
 }
 </style>

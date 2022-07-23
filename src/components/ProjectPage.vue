@@ -1,34 +1,36 @@
 <template>
-  <Header />
   <form action="" method="post">
     <input name="search" class="search" placeholder="Поиск" type="search" />
-    <button type="submit" class="loupe"></button>
+    <button type="submit" class="loupe">
+      <img class="loupe-image" src="../assets/search.svg" />
+    </button>
   </form>
-  <button class="c-button"></button>
+  <button class="c-button">
+    <img class="c-image" src="../assets/add.svg" />
+    <span>новый проект</span>
+  </button>
 </template>
 
 <script>
-import Header from "../layout/Header.vue";
 export default {
   name: "ProjectPage",
-  components: {
-    Header,
-  },
 };
 </script>
 
 <style>
+
 .search {
   position: absolute;
-  width: 208px;
+  width: 200px;
   height: 40px;
   left: 20px;
   top: 114px;
-  padding-left: 2.5%;
+  padding-left: 44px;
+  padding-right: 5px;
+  font-family: "Roboto", sans-serif;
   background: #ffffff;
   border: 0.5px solid #000000;
   border-radius: 20px;
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -43,36 +45,60 @@ export default {
   position: absolute;
   top: 119px;
   left: 27px;
-  margin: 0;
+  margin-left: 4px;
   padding: 0;
   border: 0;
-  background: transparent url("../assets/search.png") no-repeat center top;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.loupe-image {
+  display: block;
+  margin: auto;
 }
 .c-button {
-
   border: 0.5px solid #000000;
   border-radius: 20px;
   background: #ffffff;
-  color: #fff;
   cursor: pointer;
-  
-  box-sizing: border-box;
-
   position: absolute;
   width: 200px;
   height: 40px;
   left: 258px;
   top: 114px;
-  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4)
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
+}
+
+span {
+  height: 19px;
+  margin-top: 7px;
+  margin-right: 22px;
+  float: right;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
 }
 
 .c-button:hover {
   background: #cacfda;
 }
 
-.c-button:focus {
-  outline: none;
-  box-shadow: 0 4px 4px  #000000;
+.c-button:focus-visible {
+  outline: transparent;
+  box-shadow: 0 4px 4px #000000;
+}
+
+.c-button:active {
+  box-shadow: 0 4px 4px #000000;
+}
+
+.c-image {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-left: 13px;
 }
 </style>

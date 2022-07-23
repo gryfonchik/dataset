@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import Header from '../layout/Header.vue'
 import ProjectView from '../views/ProjectView.vue'
+import Dropdown from '../views/AccView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,9 +13,14 @@ const router = createRouter({
     },
     {
       path: '/project',
-      name: 'hed',
+      name: 'project',
       component: ProjectView
-    }
+    },
+    {
+      path: '/acc',
+      name: 'acc',
+      component: Dropdown
+    },
   ]
 })
 
