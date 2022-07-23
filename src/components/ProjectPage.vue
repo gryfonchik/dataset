@@ -5,20 +5,37 @@
       <img class="loupe-image" src="../assets/search.svg" />
     </button>
   </form>
-  <button class="c-button">
+  <button class="c-button" @click="showModal">
     <img class="c-image" src="../assets/add.svg" />
     <span>новый проект</span>
   </button>
+  <modal v-show="isModalVisible" @close="closeModal" />
 </template>
 
 <script>
+import modal from "../components/Modal.vue";
 export default {
   name: "ProjectPage",
+  components: {
+    modal,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+  },
 };
 </script>
 
 <style>
-
 .search {
   position: absolute;
   width: 200px;
