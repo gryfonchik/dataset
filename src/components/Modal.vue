@@ -16,7 +16,12 @@
           <img class="c-image" src="../assets/close.svg" />
         </button>
         <form>
-          <input class="m_search" placeholder="Название проекта" />
+          <input class="m_name" name="p_name" placeholder="Название проекта" />
+          <textarea
+            class="m_info"
+            name="p_info"
+            placeholder="Описание проекта"
+          />
           <button type="submit" class="create">Создать</button>
         </form>
       </div>
@@ -36,10 +41,30 @@ export default {
 </script>
 
 <style>
+.m_info {
+  resize: none;
+  width: 450px;
+  height: 128px;
+  padding-left: 44px;
+  padding-right: 5px;
+  padding-top: 22px;
+  margin-left: 93px;
+  margin-top: 40px;
+  font-family: "Roboto", sans-serif;
+  background: #ecd4ff;
+  border: 0.5px solid #000000;
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
+  align-items: center;
+}
 .create {
-  position: absolute;
-  top: 410px;
-  left: 906px;
+margin-top: 34px;
+margin-left: 476px;
   width: 135px;
   height: 38px;
   background: #7d44a9;
@@ -63,14 +88,13 @@ export default {
 .create:active {
   box-shadow: 0 4px 4px #000000;
 }
-.m_search {
-  position: absolute;
-  width: 500px;
+.m_name {
+  width: 450px;
   height: 40px;
-  left: 492.7px;
-  top: 350px;
   padding-left: 44px;
   padding-right: 5px;
+  margin-left: 93px;
+  margin-top: 26px;
   font-family: "Roboto", sans-serif;
   background: #ecd4ff;
   border: 0.5px solid #000000;
@@ -102,16 +126,15 @@ export default {
   overflow-x: auto;
   display: flex;
   flex-direction: column;
-  width: 680px;
-  height: 200px;
+  width: 685px;
+  height: 415px;
   border: 1px solid #000000;
   border-radius: 20px;
 }
 
 .btn-close {
-  position: absolute;
-  top: 304px;
-  left: 1056px;
+  margin-left: 630px;
+  margin-top: 5px;
   border: none;
   cursor: pointer;
   background: transparent;

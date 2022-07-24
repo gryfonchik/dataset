@@ -1,16 +1,10 @@
 <template>
-  <div class="list">
-    <div class="name">Имя проекта</div>
-    <div class="label">Метки</div>
-    <div class="update">Обновление</div>
-    <div class="teg">Тег</div>
-  </div>
-  <div class="element">
+  <button class="element" type="submit">
     <div class="e_name">Имя проекта</div>
     <div class="e_label">10</div>
     <div class="e_update">Обновление</div>
     <div class="e_teg">Тег</div>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -42,7 +36,7 @@ export default {
   left: 20px;
   right: 20px;
   top: 232px;
-  width: 1500px;
+  width: 1501.4px;
   height: 70px;
   background: #ffffff;
   border: 0.5px solid #000000;
@@ -53,6 +47,13 @@ export default {
   font-family: "Roboto", sans-serif;
   color: #000000;
   text-transform: uppercase;
+}
+.element:focus-visible{
+      outline: transparent;
+  box-shadow: 0 4px 4px #000000;
+}
+.element:active{
+      box-shadow: 0 4px 4px #000000;
 }
 .name {
   position: absolute;
@@ -75,8 +76,7 @@ export default {
   margin: 12px;
 }
 .e_name {
-  position: absolute;
-  left: 4px;
+  float: left;
   margin: 24px;
 }
 .e_label {

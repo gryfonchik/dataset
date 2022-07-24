@@ -9,6 +9,12 @@
     <img class="c-image" src="../assets/add.svg" />
     <span>новый проект</span>
   </button>
+    <div class="list">
+    <div class="name">Имя проекта</div>
+    <div class="label">Метки</div>
+    <div class="update">Обновление</div>
+    <div class="teg">Тег</div>
+  </div>
   <modal v-show="isModalVisible" @close="closeModal" />
 </template>
 
