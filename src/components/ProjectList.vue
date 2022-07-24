@@ -1,5 +1,5 @@
 <template>
-  <button class="element" type="submit">
+  <button class="element" type="submit" onclick="document.location='/work'">
     <div class="e_name">Имя проекта</div>
     <div class="e_label">10</div>
     <div class="e_update">Обновление</div>
@@ -13,24 +13,7 @@ export default {
 };
 </script>
 
-<style>
-.list {
-  position: absolute;
-  width: 1500px;
-  height: 40px;
-  left: 20px;
-  right: 20px;
-  top: 192px;
-  background: #ecd4ff;
-  border: 0.5px solid #000000;
-  border-radius: 10px 10px 0px 0px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  font-family: "Roboto", sans-serif;
-  color: #000000;
-}
+<style scoped>
 .element {
   position: absolute;
   left: 20px;
@@ -54,26 +37,6 @@ export default {
 }
 .element:active{
       box-shadow: 0 4px 4px #000000;
-}
-.name {
-  position: absolute;
-  left: 24px;
-  margin: 12px;
-}
-.label {
-  position: absolute;
-  left: 584px;
-  margin: 12px;
-}
-.update {
-  position: absolute;
-  left: 822px;
-  margin: 12px;
-}
-.teg {
-  position: absolute;
-  left: 941px;
-  margin: 12px;
 }
 .e_name {
   float: left;

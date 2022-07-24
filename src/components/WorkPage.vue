@@ -7,33 +7,24 @@
   </div>
   <div class="p_info">изменить описание проекта</div>
   <ProjectNav />
-  <Export 
-  :options="options"
-  />
+  <Review />
 </template>
 
 <script>
 import ProjectNav from "../layout/ProjectNav.vue";
 import Export from "../layout/Export.vue";
+import Review from "../layout/Review.vue"
 export default {
   name: "WorkPage",
   components: {
     ProjectNav,
     Export,
-  },
-  data() {
-    return {
-      options: [
-        {name: 'Option 1', value: 1},
-        {name: 'Option 2', value: 2},
-        {name: 'Option 3', value: 3},
-      ]
-    }
-  },
+    Review
+},
 };
 </script>
 
-<style>
+<style scoped>
 .contain {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -72,8 +63,16 @@ export default {
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
 }
-.s_button:hover{
-
+.s_button:hover {
+  background: #cacfda;
+}
+.s_button:focus-visible {
+  outline: transparent;
+  box-shadow: 0 4px 4px #000000;
+}
+.s_button:active {
+  box-shadow: 0 4px 4px #000000;
 }
 </style>

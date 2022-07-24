@@ -8,7 +8,7 @@
     </form>
     <button class="c-button" @click="showModal">
       <img class="c-image" src="../assets/add.svg" />
-      <span class="new">новый проект</span>
+      <span>новый проект</span>
     </button>
   </div>
   <div class="list">
@@ -44,6 +44,43 @@ export default {
 </script>
 
 <style scoped>
+.list {
+  position: absolute;
+  width: 1500px;
+  height: 40px;
+  left: 20px;
+  right: 20px;
+  top: 192px;
+  background: #ecd4ff;
+  border: 0.5px solid #000000;
+  border-radius: 10px 10px 0px 0px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #000000;
+}
+.name {
+  position: absolute;
+  left: 24px;
+  margin: 12px;
+}
+.label {
+  position: absolute;
+  left: 584px;
+  margin: 12px;
+}
+.update {
+  position: absolute;
+  left: 822px;
+  margin: 12px;
+}
+.teg {
+  position: absolute;
+  left: 941px;
+  margin: 12px;
+}
 .contain {
   display: grid;
   grid-template-columns: 258px auto;
@@ -88,6 +125,7 @@ export default {
   border: 0.5px solid #000000;
   border-radius: 20px;
   background: #ffffff;
+  
   cursor: pointer;
   width: 200px;
   height: 40px;
@@ -95,7 +133,7 @@ export default {
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
 }
 
-.new {
+span {
   height: 19px;
   margin-top: 7px;
   margin-right: 22px;
