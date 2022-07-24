@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
 }
 </script>
 
@@ -26,5 +26,6 @@ html {
   body {
     display: block;
   background: linear-gradient(180deg, #7D44A9 0%, #230C35 100%) no-repeat;
+  
 }
 </style>

@@ -63,8 +63,8 @@ export default {
   align-items: center;
 }
 .create {
-margin-top: 34px;
-margin-left: 476px;
+  margin-top: 34px;
+  margin-left: 476px;
   width: 135px;
   height: 38px;
   background: #7d44a9;

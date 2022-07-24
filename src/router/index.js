@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProjectView from '../views/ProjectView.vue'
-import Dropdown from '../views/AccView.vue'
 import WorkView from '../views/WorkView.vue'
+import MarkView from '../views/MarkView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,14 +18,14 @@ const router = createRouter({
       component: ProjectView
     },
     {
-      path: '/acc',
-      name: 'acc',
-      component: Dropdown
-    },
-    {
       path: '/work',
       name: 'work',
       component: WorkView
+    },
+    {
+      path: '/mark',
+      name: 'mark',
+      component: MarkView
     },
   ]
 })

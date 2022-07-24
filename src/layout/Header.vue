@@ -11,17 +11,13 @@
 </template>
 
 <script>
-import Dropdown from "./Dropdown.vue";
 
 export default {
   name: "Header",
-  components: {
-    Dropdown,
-  },
 };
 </script>
 
-<style>
+<style scoped>
 .nav {
   background-color: #49006b;
   overflow: hidden;

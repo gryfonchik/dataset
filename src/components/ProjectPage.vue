@@ -1,15 +1,17 @@
 <template>
-  <form action="" method="post">
-    <input name="search" class="search" placeholder="Поиск" type="search" />
-    <button type="submit" class="loupe">
-      <img class="loupe-image" src="../assets/search.svg" />
+  <div class="contain">
+    <form action="" method="post">
+      <input name="search" class="search" placeholder="Поиск" type="search" />
+      <button type="submit" class="loupe">
+        <img class="loupe-image" src="../assets/search.svg" />
+      </button>
+    </form>
+    <button class="c-button" @click="showModal">
+      <img class="c-image" src="../assets/add.svg" />
+      <span class="new">новый проект</span>
     </button>
-  </form>
-  <button class="c-button" @click="showModal">
-    <img class="c-image" src="../assets/add.svg" />
-    <span>новый проект</span>
-  </button>
-    <div class="list">
+  </div>
+  <div class="list">
     <div class="name">Имя проекта</div>
     <div class="label">Метки</div>
     <div class="update">Обновление</div>
@@ -41,13 +43,16 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.contain {
+  display: grid;
+  grid-template-columns: 258px auto;
+}
 .search {
-  position: absolute;
   width: 200px;
   height: 40px;
-  left: 20px;
-  top: 114px;
+  margin-top: 47px;
+  margin-left: 20px;
   padding-left: 44px;
   padding-right: 5px;
   font-family: "Roboto", sans-serif;
@@ -84,15 +89,13 @@ export default {
   border-radius: 20px;
   background: #ffffff;
   cursor: pointer;
-  position: absolute;
   width: 200px;
   height: 40px;
-  left: 258px;
-  top: 114px;
+  margin-top: 47px;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
 }
 
-span {
+.new {
   height: 19px;
   margin-top: 7px;
   margin-right: 22px;
