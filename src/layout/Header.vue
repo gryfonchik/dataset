@@ -1,6 +1,6 @@
 <template>
   <div class="nav">
-    <div class="nav_name">название проекта</div>
+    <div class="nav_name"><router-link class="nav_link" to="/">название проекта</router-link></div>
     <div class="nav_name">
       <router-link class="nav_link" to="project">проекты</router-link>
     </div>
