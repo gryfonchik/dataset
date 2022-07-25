@@ -27,7 +27,7 @@ export default {
 <style scoped>
 .grid {
   display: grid;
-  grid-template-columns: 710px auto;
+  grid-template-columns: 750px auto;
 }
 .t_grid {
   font-family: "Roboto", sans-serif;
@@ -45,8 +45,8 @@ export default {
   background: #ffffff;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  margin-left: 20px;
-  margin-top: 38px;
+  margin-left: 60px;
+  margin-top: 42px;
 }
 .date {
   margin-left: 36px;
@@ -64,7 +64,7 @@ export default {
   cursor: pointer;
   width: 230px;
   height: 56px;
-  margin-top: 38px;
+  margin-top: 42px;
   margin-left: 26px;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
 }

@@ -1,18 +1,33 @@
 <template>
   <div class="p_nav">
     <ul class="menu">
-      <li><button class="nav">Обзор</button></li>
+      <li><button class="nav" @click="component = 'Review'">Обзор</button></li>
       <li><button class="nav">Dataset</button></li>
       <li><button class="nav">Пометки</button></li>
       <li><button class="nav">Строки данных</button></li>
-      <li><button class="nav">Экспорт</button></li>
+      <li>
+        <button class="nav" @click="component = 'Export'">Экспорт</button>
+      </li>
     </ul>
   </div>
+  <component :is="component"></component>
 </template>
 
 <script>
+import Export from "../layout/Export.vue";
+import Review from "../layout/Review.vue";
+
 export default {
   name: "ProjectNav",
+    components: {
+      Export,
+      Review
+    },
+  data () {
+    return {
+      component: 'Export'
+    }
+  } 
 };
 </script>
 
@@ -61,7 +76,7 @@ ul {
   background: none repeat scroll 0 0 transparent;
   height: 4px;
   width: 0;
-  background: #870AC1;
+  background: #870ac1;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
 }
 .nav:hover::after {
@@ -69,7 +84,7 @@ ul {
   left: 0;
 }
 
-.nav:focus::after{
+.nav:focus::after {
   width: 100%;
   left: 0;
 }

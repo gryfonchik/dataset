@@ -7,19 +7,14 @@
   </div>
   <div class="p_info">изменить описание проекта</div>
   <ProjectNav />
-  <Review />
 </template>
 
 <script>
 import ProjectNav from "../layout/ProjectNav.vue";
-import Export from "../layout/Export.vue";
-import Review from "../layout/Review.vue"
 export default {
   name: "WorkPage",
   components: {
     ProjectNav,
-    Export,
-    Review
 },
 };
 </script>
