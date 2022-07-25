@@ -59,6 +59,7 @@ export default {
   font-size: 20px;
   line-height: 23px;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
+  user-select: none;
 }
 .s_button:hover {
   background: #cacfda;

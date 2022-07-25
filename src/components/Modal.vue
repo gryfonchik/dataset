@@ -94,7 +94,7 @@ export default {
   padding-left: 44px;
   padding-right: 5px;
   margin-left: 93px;
-  margin-top: 26px;
+  margin-top: 20px;
   font-family: "Roboto", sans-serif;
   background: #ecd4ff;
   border: 0.5px solid #000000;
@@ -133,10 +133,13 @@ export default {
 }
 
 .btn-close {
+  width: 50px;
+  height: 50px;
   margin-left: 630px;
-  margin-top: 5px;
+  margin-top: 4px;
   border: none;
   cursor: pointer;
+  padding: 0;
   background: transparent;
 }
 </style>

@@ -1,10 +1,12 @@
 <template>
   <div class="p_nav">
     <ul class="menu">
-      <li><button class="nav" @click="component = 'Review'">Обзор</button></li>
-      <li><button class="nav">Dataset</button></li>
-      <li><button class="nav">Пометки</button></li>
-      <li><button class="nav">Строки данных</button></li>
+      <li>
+        <button class="nav" @click="component = 'Review'">Обзор</button>
+      </li>
+      <li><button class="nav" @click="component = 'Dataset'">Dataset</button></li>
+      <li><button class="nav" @click="component = 'Tag'">Пометки</button></li>
+      <li><button class="nav" @click="component = 'DataRows'">Строки данных</button></li>
       <li>
         <button class="nav" @click="component = 'Export'">Экспорт</button>
       </li>
@@ -16,18 +18,24 @@
 <script>
 import Export from "../layout/Export.vue";
 import Review from "../layout/Review.vue";
+import Tag from "../layout/Tag.vue";
+import DataRows from "../layout/DataRows.vue";
+import Dataset from "../layout/Dataset.vue"
 
 export default {
   name: "ProjectNav",
-    components: {
-      Export,
-      Review
-    },
-  data () {
+  components: {
+    Export,
+    Review,
+    Tag,
+    DataRows,
+    Dataset
+  },
+  data() {
     return {
-      component: 'Export'
-    }
-  } 
+      component: "Review",
+    };
+  },
 };
 </script>
 

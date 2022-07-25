@@ -7,9 +7,6 @@
     <!--<div class="nav_logout">
       <router-link class="nav_link" to="/">вход</router-link>
     </div>-->
-    <select>
-    <option></option>
-    </select>
   </div>
 </template>
 

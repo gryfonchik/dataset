@@ -45,7 +45,7 @@ export default {
   background: #ffffff;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  margin-left: 60px;
+  margin-left: 20px;
   margin-top: 42px;
 }
 .date {
@@ -67,6 +67,7 @@ export default {
   margin-top: 42px;
   margin-left: 26px;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
+  user-select: none;
 }
 
 .c-span {

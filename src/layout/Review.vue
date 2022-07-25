@@ -47,8 +47,8 @@ export default {
 <style scoped>
 .grid {
   display: grid;
-  gap: 40px;
-  grid-template-columns: 750px 690px;
+  gap: 100px;
+  grid-template-columns: 710px 690px;
 }
 .a_grid {
   display: grid;
@@ -84,7 +84,7 @@ export default {
 }
 .block {
   margin-top: 42px;
-  margin-left: 60px;
+  margin-left: 20px;
   width: 690px;
   height: 160px;
   background: #ffffff;

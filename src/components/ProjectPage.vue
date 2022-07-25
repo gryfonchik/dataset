@@ -83,7 +83,8 @@ export default {
 }
 .contain {
   display: grid;
-  grid-template-columns: 258px auto;
+  gap: 30px;
+  grid-template-columns: auto auto;
 }
 .search {
   width: 200px;
@@ -102,6 +103,9 @@ export default {
   line-height: 14px;
   text-transform: uppercase;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
+}
+.search:focus {
+  width: 400px;
 }
 
 .loupe {
@@ -125,13 +129,14 @@ export default {
   border: 0.5px solid #000000;
   border-radius: 20px;
   background: #ffffff;
-  
+  margin-right: 1200px;
   cursor: pointer;
   width: 200px;
   height: 40px;
   margin-top: 47px;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
 }
+
 
 span {
   height: 19px;
