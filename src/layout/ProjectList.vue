@@ -27,7 +27,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .element {
   padding-top: 24px;
   display: grid;
