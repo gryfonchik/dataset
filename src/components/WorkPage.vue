@@ -2,7 +2,7 @@
   <div class="contain">
     <div class="p_name">Имя проекта</div>
     <div>
-      <button type="submit" class="s_button">Начать маркировку</button>
+      <button type="submit" class="s_button" onclick="document.location='/mark'">Начать маркировку</button>
     </div>
   </div>
   <div class="p_info">изменить описание проекта</div>
