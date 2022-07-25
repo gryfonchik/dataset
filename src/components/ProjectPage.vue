@@ -11,20 +11,17 @@
       <span>новый проект</span>
     </button>
   </div>
-  <div class="list">
-    <div class="name">Имя проекта</div>
-    <div class="label">Метки</div>
-    <div class="update">Обновление</div>
-    <div class="teg">Тег</div>
-  </div>
+  <ProjectList />
   <modal v-show="isModalVisible" @close="closeModal" />
 </template>
 
 <script>
 import modal from "../components/Modal.vue";
+import ProjectList from "../layout/ProjectList.vue";
 export default {
   name: "ProjectPage",
   components: {
+    ProjectList,
     modal,
   },
   data() {
