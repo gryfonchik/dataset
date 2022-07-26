@@ -9,11 +9,14 @@
         <button>Маркированные</button>
         <button>Немаркированные</button>
       </div>
-            <div class="mark">
+      <div class="mark">
         <button class="c_button">
           <span class="c-span">Dataset</span>
           <img class="c-image" src="../assets/filter.svg" />
         </button>
+        <button>Dataset1</button>
+        <button>Dataset1</button>
+        <button>Dataset1</button>
         <button>Dataset1</button>
       </div>
     </div>
@@ -55,6 +58,12 @@ export default {
 </script>
 
 <style scoped>
+.sort {
+  margin-bottom: 20px;
+}
+.list {
+  margin-bottom: 20px;
+}
 .grid {
   display: grid;
   gap: 68px;
@@ -119,7 +128,6 @@ export default {
   margin-left: 20px;
   margin-top: 38px;
   width: 260px;
-  height: 182px;
   background: #ffffff;
   border: 1px solid #000000;
   border-radius: 20px;
@@ -127,6 +135,7 @@ export default {
 }
 
 button {
+  height: 60px;
   border: 0;
   border-radius: 20px;
   background: transparent;

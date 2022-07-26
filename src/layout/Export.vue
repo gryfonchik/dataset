@@ -10,21 +10,43 @@
       <div class="date">Дата обновления(UTC):</div>
     </div>
     <div>
-      <button class="c-button">
+      <button class="c-button" @click="showModal">
         <img class="c-image" src="../assets/download.svg" />
         <span class="c-span">Экспорт</span>
       </button>
     </div>
   </div>
+  <modal v-show="isModalVisible" @close="closeModal" />
 </template>
 
 <script>
+import modal from "../components/Modal.vue";
 export default {
   name: "Export",
+  components: {
+    modal,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+  },
 };
 </script>
 
 <style scoped>
+.drop {
+  margin-left: 36px;
+  margin-top: 4px;
+}
 .grid {
   display: grid;
   grid-template-columns: 750px auto;

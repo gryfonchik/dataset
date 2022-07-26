@@ -60,6 +60,7 @@ export default {
   line-height: 23px;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
   user-select: none;
+  cursor: pointer;
 }
 .s_button:hover {
   background: #cacfda;

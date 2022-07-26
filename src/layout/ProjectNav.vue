@@ -1,16 +1,27 @@
 <template>
-  <div class="p_nav">
-    <ul class="menu">
-      <li>
-        <button class="nav" @click="component = 'Review'">Обзор</button>
-      </li>
-      <li><button class="nav" @click="component = 'Dataset'">Dataset</button></li>
-      <li><button class="nav" @click="component = 'Tag'">Пометки</button></li>
-      <li><button class="nav" @click="component = 'DataRows'">Строки данных</button></li>
-      <li>
-        <button class="nav" @click="component = 'Export'">Экспорт</button>
-      </li>
-    </ul>
+  <div class="n_grid">
+    <div class="p_nav">
+      <ul class="menu">
+        <li>
+          <button class="nav" @click="component = 'Review'">Обзор</button>
+        </li>
+        <li>
+          <button class="nav" @click="component = 'Dataset'">Dataset</button>
+        </li>
+        <li><button class="nav" @click="component = 'Tag'">Пометки</button></li>
+        <li>
+          <button class="nav" @click="component = 'DataRows'">
+            Строки данных
+          </button>
+        </li>
+        <li>
+          <button class="nav" @click="component = 'Export'">Экспорт</button>
+        </li>
+      </ul>
+    </div>
+    <button class="n_but">
+      <img class="n_img" src="../assets/plus.svg" />
+    </button>
   </div>
   <component :is="component"></component>
 </template>
@@ -20,7 +31,7 @@ import Export from "../layout/Export.vue";
 import Review from "../layout/Review.vue";
 import Tag from "../layout/Tag.vue";
 import DataRows from "../layout/DataRows.vue";
-import Dataset from "../layout/Dataset.vue"
+import Dataset from "../layout/Dataset.vue";
 
 export default {
   name: "ProjectNav",
@@ -29,7 +40,7 @@ export default {
     Review,
     Tag,
     DataRows,
-    Dataset
+    Dataset,
   },
   data() {
     return {
@@ -40,6 +51,36 @@ export default {
 </script>
 
 <style scoped>
+.n_img {
+  width: 50px;
+  height: 50px;
+}
+.n_but {
+  padding: 5px;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  border: 0;
+  margin-top: 46px;
+  margin-left: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+.n_but:hover {
+  background: #d5d3d3;
+}
+.n_but:focus-visible {
+  outline: transparent;
+  box-shadow: 0 4px 4px #000000;
+}
+.n_but:active {
+  box-shadow: 0 4px 4px #000000;
+}
+.n_grid {
+  display: grid;
+  grid-template-columns: 760px auto;
+}
 .p_nav {
   width: 740px;
   height: 70px;

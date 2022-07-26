@@ -1,23 +1,44 @@
 <template>
   <div class="nav">
-    <div class="nav_name"><router-link class="nav_link" to="/">название проекта</router-link></div>
+    <div class="nav_name">
+      <router-link class="nav_link" to="/">название проекта</router-link>
+    </div>
     <div class="nav_name">
       <router-link class="nav_link" to="project">проекты</router-link>
     </div>
     <!--<div class="nav_logout">
       <router-link class="nav_link" to="/">вход</router-link>
     </div>-->
+    <Dropdown title="ФИО ПОЛЬЗОВАТЕЛЯ" :items="services" class="drop" />
   </div>
 </template>
 
 <script>
-
+import Dropdown from "./Dropdown.vue";
 export default {
   name: "Header",
+  components: {
+    Dropdown,
+    data() {
+      return {
+        services: [
+          {
+            title: Выход,
+          },
+        ],
+      };
+    },
+  },
 };
 </script>
 
 <style scoped>
+.drop {
+  float: right;
+  margin-right: 40px;
+  width: 300px;
+  height: 30px;
+}
 .nav {
   background-color: #49006b;
   overflow: hidden;
@@ -38,11 +59,12 @@ export default {
   margin-right: 56px;
 }
 
-
 .nav_name {
   float: left;
   margin-left: 20px;
   margin-right: 20px;
+  height: 27px;
+  padding-top: 3px;
 }
 .nav_link {
   color: #ffffff;
