@@ -1,15 +1,18 @@
 <template>
-  <div class="list">
-    <div></div>
-    <div>Имя dataset</div>
-    <div></div>
-    <div>Описание</div>
-  </div>
-  <div class="element">
-    <div></div>
-    <div>Имя проекта</div>
-    <div></div>
-    <div>10</div>
+  <div class="win">
+    <div class="list">
+      <div></div>
+      <div>Имя dataset</div>
+      <div></div>
+      <div>Описание</div>
+    </div>
+    <div class="element">
+      <div></div>
+      <div>Имя проекта</div>
+      <div></div>
+      <div>10</div>
+    </div>
+    
   </div>
 </template>
 
@@ -20,6 +23,9 @@ export default {
 </script>
 
 <style scoped>
+.win {
+    margin-bottom: 20px;
+}
 .list {
   display: grid;
   padding-top: 12px;

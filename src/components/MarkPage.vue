@@ -57,7 +57,6 @@ export default {
 }
 .block {
   width: 120px;
-  height: 330px;
   margin-left: 20px;
   margin-top: 20px;
   background: #f5e9ff;

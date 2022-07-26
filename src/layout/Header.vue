@@ -1,6 +1,8 @@
 <template>
   <div class="nav">
-    <div class="nav_name"><router-link class="nav_link" to="/">название проекта</router-link></div>
+    <div class="nav_name">
+      <router-link class="nav_link" to="/">название проекта</router-link>
+    </div>
     <div class="nav_name">
       <router-link class="nav_link" to="project">проекты</router-link>
     </div>
@@ -9,15 +11,16 @@
       <button v-if="signedIn" class="nav_link" @click="SignOut">Выход</button>
       <button class="nav_link" @click="Account">Account</button>
     </div>
+    <Dropdown title="ФИО ПОЛЬЗОВАТЕЛЯ" :items="services" class="drop" />
   </div>
 </template>
 
 <script>
 import MsalAuth from '../auth';
 import endpoints from '../endpoints';
+import Dropdown from "./Dropdown.vue";
 
 const auth = new MsalAuth();
-
 export default {
   
   name: "Header",
@@ -76,6 +79,19 @@ export default {
       }
     }
   },
+
+  components: {
+    Dropdown,
+    data() {
+      return {
+        services: [
+          {
+            title: Выход,
+          },
+        ],
+      };
+    },
+  },
 };
 
 
@@ -83,6 +99,12 @@ export default {
 </script>
 
 <style scoped>
+.drop {
+  float: right;
+  margin-right: 40px;
+  width: 300px;
+  height: 30px;
+}
 .nav {
   background-color: #49006b;
   overflow: hidden;
@@ -103,11 +125,12 @@ export default {
   margin-right: 56px;
 }
 
-
 .nav_name {
   float: left;
   margin-left: 20px;
   margin-right: 20px;
+  height: 27px;
+  padding-top: 3px;
 }
 .nav_link {
   color: #ffffff;

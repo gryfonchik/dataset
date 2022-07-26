@@ -1,10 +1,12 @@
 <template>
   <div class="contain">
     <form action="" method="post">
-      <input name="search" class="search" placeholder="Поиск" type="search" />
-      <button type="submit" class="loupe">
-        <img class="loupe-image" src="../assets/search.svg" />
-      </button>
+      <div class="s_grid">
+        <button type="submit" class="loupe">
+          <img class="loupe-image" src="../assets/search.svg" />
+        </button>
+        <input name="search" class="search" placeholder="Поиск" type="search" />
+      </div>
     </form>
     <button class="c-button" @click="showModal">
       <img class="c-image" src="../assets/add.svg" />
@@ -41,42 +43,16 @@ export default {
 </script>
 
 <style scoped>
-.list {
-  position: absolute;
-  width: 1500px;
-  height: 40px;
-  left: 20px;
-  right: 20px;
-  top: 192px;
-  background: #ecd4ff;
+.s_grid {
+  margin-left: 20px;
+  background: #ffffff;
   border: 0.5px solid #000000;
-  border-radius: 10px 10px 0px 0px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  font-family: "Roboto", sans-serif;
-  color: #000000;
-}
-.name {
-  position: absolute;
-  left: 24px;
-  margin: 12px;
-}
-.label {
-  position: absolute;
-  left: 584px;
-  margin: 12px;
-}
-.update {
-  position: absolute;
-  left: 822px;
-  margin: 12px;
-}
-.teg {
-  position: absolute;
-  left: 941px;
-  margin: 12px;
+  border-radius: 20px;
+  margin-top: 47px;
+  height: 40px;
+  display: grid;
+  grid-template-columns: auto auto;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
 }
 .contain {
   display: grid;
@@ -84,44 +60,38 @@ export default {
   grid-template-columns: auto auto;
 }
 .search {
-  width: 200px;
+  width: 150px;
   height: 40px;
-  margin-top: 47px;
-  margin-left: 20px;
-  padding-left: 44px;
+  padding-left: 5px;
   padding-right: 5px;
   font-family: "Roboto", sans-serif;
   background: #ffffff;
-  border: 0.5px solid #000000;
+  border: 0;
   border-radius: 20px;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
-  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
+}
+input:focus {
+border: 0;
 }
 .search:focus {
   width: 400px;
 }
 
 .loupe {
+  margin-left: 7px;
+  margin-top: 5px;
   height: 30px;
   width: 30px;
-  position: absolute;
-  top: 119px;
-  left: 27px;
-  margin-left: 4px;
   padding: 0;
   border: 0;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0);
 }
 
-.loupe-image {
-  display: block;
-  margin: auto;
-}
 .c-button {
   border: 0.5px solid #000000;
   border-radius: 20px;
@@ -133,7 +103,6 @@ export default {
   margin-top: 47px;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
 }
-
 
 span {
   height: 19px;
