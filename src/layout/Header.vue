@@ -4,17 +4,82 @@
     <div class="nav_name">
       <router-link class="nav_link" to="project">проекты</router-link>
     </div>
-    <!--<div class="nav_logout">
-      <router-link class="nav_link" to="/">вход</router-link>
-    </div>-->
+    <div class="nav_logout">
+      <button v-if="!signedIn" class="nav_link" @click="SignIn">Вход</button>
+      <button v-if="signedIn" class="nav_link" @click="SignOut">Выход</button>
+      <button class="nav_link" @click="Account">Account</button>
+    </div>
   </div>
 </template>
 
 <script>
+import MsalAuth from '../auth';
+import endpoints from '../endpoints';
+
+const auth = new MsalAuth();
 
 export default {
+  
   name: "Header",
+
+  data() {
+    return {
+      signedIn: false,
+    };
+  },
+
+
+  created() {
+    const token = localStorage.getItem('token');
+    if (token){
+      this.signedIn = true;
+    }
+  },
+
+  methods: {
+    async SignIn() {
+      const token = await auth.signIn();
+      try {
+        const me = await endpoints.getMe(token);
+        if (me.status === 200){
+          this.signedIn = true;
+
+        }
+        localStorage.setItem("token", token);
+
+      } catch (error) {
+        if (error.response.status === 403){
+          const c = await endpoints.createUser(token);
+          this.signedIn = true;
+          console.log(c);
+          console.log("created user");
+        } else {
+        console.error(error);
+        }
+      }
+      
+    },
+
+    async SignOut(){
+      auth.signOut();
+      this.signedIn = false;
+      localStorage.clear();
+    },
+
+    async Account(){
+      const token = localStorage.getItem('token');
+      if (token){
+      const user = await endpoints.getMe(token);
+      console.log(user.data);
+      } else {
+        console.log('Not logged in');
+      }
+    }
+  },
 };
+
+
+
 </script>
 
 <style scoped>
