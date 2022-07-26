@@ -28,6 +28,11 @@ export default {
   data() {
     return {
       signedIn: false,
+      services: [
+        {
+          title: "Выход",
+        },
+      ]
     };
   },
 
@@ -81,20 +86,9 @@ export default {
   },
 
   components: {
-    Dropdown,
-    data() {
-      return {
-        services: [
-          {
-            title: Выход,
-          },
-        ],
-      };
-    },
+    Dropdown
   },
 };
-
-
 
 </script>
 
