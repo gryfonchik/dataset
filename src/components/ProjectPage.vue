@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import modal from "../components/Modal.vue";
+import modal from "../modal/Modal.vue";
 import ProjectList from "../layout/ProjectList.vue";
 export default {
   name: "ProjectPage",

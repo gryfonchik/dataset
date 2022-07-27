@@ -8,6 +8,13 @@
         <div>JSON</div>
       </div>
       <div class="date">Дата обновления(UTC):</div>
+      <div class="v_grid">
+        <VSelect
+          :options="options"
+          @select="optionSelect"
+          :selected="selected"
+        />
+      </div>
     </div>
     <div>
       <button class="c-button" @click="showModal">
@@ -16,37 +23,41 @@
       </button>
     </div>
   </div>
-  <modal v-show="isModalVisible" @close="closeModal" />
 </template>
 
 <script>
-import modal from "../components/Modal.vue";
+import VSelect from "../layout/VSelect.vue";
 export default {
   name: "Export",
   components: {
-    modal,
+    VSelect,
   },
   data() {
     return {
-      isModalVisible: false,
+      options: [
+        { name: "Сегодня", value: 1 },
+        { name: "3 дня", value: 2 },
+        { name: "7 дней", value: 3 },
+      ],
+      selected: "Сроки экспорта",
     };
   },
   methods: {
-    showModal() {
-      this.isModalVisible = true;
-    },
-    closeModal() {
-      this.isModalVisible = false;
+    optionSelect(option) {
+      this.selected = option.name;
     },
   },
 };
 </script>
 
 <style scoped>
-.drop {
-  margin-left: 36px;
+.v_grid {
   margin-top: 4px;
+  margin-left: 36px;
+  display: grid;
+  grid-template-columns: 296px auto;
 }
+
 .grid {
   display: grid;
   grid-template-columns: 750px auto;

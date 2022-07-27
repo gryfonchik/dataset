@@ -14,7 +14,7 @@
           <span class="c-span">Dataset</span>
           <img class="c-image" src="../assets/filter.svg" />
         </button>
-        <button>Dataset1</button>
+        <button @click="showModal">Dataset1</button>
         <button>Dataset1</button>
         <button>Dataset1</button>
         <button>Dataset1</button>
@@ -49,11 +49,29 @@
       </div>
     </div>
   </div>
+  <modal v-show="isModalVisible" @close="closeModal" />
 </template>
 
 <script>
+import modal from "../modal/R_Modal.vue";
 export default {
   name: "DataRows",
+  components: {
+    modal,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+  },
 };
 </script>
 

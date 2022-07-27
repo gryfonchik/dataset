@@ -6,25 +6,42 @@
       <div></div>
       <div>Описание</div>
     </div>
-    <div class="element">
+    <div class="element" @click="showModal">
       <div></div>
       <div>Имя проекта</div>
       <div></div>
       <div>10</div>
     </div>
-    
+    <modal v-show="isModalVisible" @close="closeModal" />
   </div>
 </template>
 
 <script>
+import modal from "../modal/D_Modal.vue";
 export default {
   name: "Dataset",
+  components: {
+    modal,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+  },
 };
 </script>
 
 <style scoped>
 .win {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 .list {
   display: grid;

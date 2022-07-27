@@ -7,9 +7,9 @@
       <router-link class="nav_link" to="project">проекты</router-link>
     </div>
     <div class="nav_logout">
-      <button v-if="!signedIn" class="nav_link" @click="SignIn">Вход</button>
-      <button v-if="signedIn" class="nav_link" @click="SignOut">Выход</button>
-      <button class="nav_link" @click="Account">Account</button>
+      <div v-if="!signedIn" class="nav_link" @click="SignIn">Вход</div>
+      <div v-if="signedIn" class="nav_link" @click="SignOut">Выход</div>
+      <button v-if="signedIn" class="nav_link" @click="Account">Account</button>
     </div>
     <Dropdown title="ФИО ПОЛЬЗОВАТЕЛЯ" :items="services" class="drop" />
   </div>

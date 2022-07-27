@@ -1,23 +1,59 @@
 <template>
   <div class="block">
     <div class="left">
-      <div class="text">Имя пометки</div>
-      <div class="dropdown"></div>
+      <input class="text" placeholder="Имя пометки" />
+      <div>
+        <VSelect
+          :options="options"
+          @select="optionSelect"
+          :selected="selected"
+        />
+        <img :src="l_selected" />
+      </div>
     </div>
     <div class="right">
       <button class="basket">
         <img class="c-image" src="../assets/basket.svg" />
       </button>
-      <button class="accept">
+      <button class="accept" @click="showModal">
         <img class="c-image" src="../assets/accept.svg" />
       </button>
     </div>
   </div>
+  <modal v-show="isModalVisible" @close="closeModal" />
 </template>
 
 <script>
+import VSelect from "./VSelect.vue";
+import modal from "../modal/T_Modal.vue";
 export default {
   name: "Tag",
+  components: {
+    VSelect,
+    modal,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+      options: [
+        { name: "Пятиугольник", value: 1 },
+        { name: "Квадрат", value: 2 },
+        { name: "Classification ", value: 3 },
+      ],
+      selected: "Пятиугольник",
+    };
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+    optionSelect(option) {
+      this.selected = option.name;
+    },
+  },
 };
 </script>
 
@@ -48,16 +84,20 @@ export default {
   margin-left: 90px;
   padding: 20px;
 }
-.dropdown {
-  width: 260px;
-  height: 60px;
-  background: #ecd5ff;
-  border-radius: 20px;
+
+input.text::placeholder {
+  color: #000000;
 }
+
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 .left {
   display: grid;
   gap: 84px;
-  grid-template-columns: 360px 260px;
+  grid-template-columns: 360px 350px;
 }
 
 .right {

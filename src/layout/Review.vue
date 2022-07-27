@@ -17,13 +17,15 @@
         </div>
       </div>
     </div>
-      <div class="l_block">
+    <div class="l_block">
+      <div class="l_head">
         <div class="annotation">9 анотаций</div>
         <div class="a_grid">
           <div>Имя</div>
           <div>Количество</div>
           <div>% использования</div>
         </div>
+      </div>
       <div class="list">
         <div class="l_grid">
           <div class="grid_grid">
@@ -62,6 +64,15 @@ export default {
   margin-left: 30px;
   margin-top: 12px;
 }
+.l_head {
+  width: 690px;
+  height: 64px;
+  background: #ffffff;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 20px 20px 0 0;
+  padding-top: 16px;
+  margin-top: 42px;
+}
 .l_grid {
   display: grid;
   gap: 170px;
@@ -91,21 +102,13 @@ export default {
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
 }
-.l_block {
-  width: 690px;
-  height: 64px;
-  background: #ffffff;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 20px 20px 0 0;
-  padding-top: 16px;
-  margin-top: 42px;
-}
+
 .list {
   width: 690px;
   height: 80px;
   background: #ffffff;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
-  margin-top: 11px;
+  margin-top: 1px;
 }
 .title {
   font-family: "Roboto", sans-serif;
