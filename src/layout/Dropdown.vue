@@ -9,7 +9,7 @@
       <transition name="fade" appear>
         <div class="sub-menu" v-if="isOpen">
           <div>
-            <button class="sub_button">Выход</button>
+            <button id = "exit" class="sub_button" @click="func">Выход</button>
           </div>
         </div>
       </transition>
@@ -20,10 +20,12 @@
 <script>
 export default {
   name: "Dropdown",
-  props: ["title", "items"],
+  props: ["items"],
   data() {
     return {
       isOpen: false,
+      title: "",
+      func: '',
     };
   },
 };

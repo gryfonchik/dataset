@@ -7,11 +7,9 @@
       <router-link class="nav_link" to="project">проекты</router-link>
     </div>
     <div class="nav_logout">
-      <div v-if="signedIn" class="nav_link" @click="SignIn">Вход</div>
-      <div v-if="signedIn" class="nav_link" @click="SignOut">Выход</div>
-      <button v-if="signedIn" class="nav_link" @click="Account">Account</button>
+      <div v-if="!signedIn" class="nav_link" @click="SignIn">Вход</div>
     </div>
-    <Dropdown title="ФИО ПОЛЬЗОВАТЕЛЯ" :items="services" class="drop" />
+    <Dropdown v-if="signedIn" ref="dropDown" title= 'ФИО ПОЛЬЗОВАТЕЛЯ' class="drop" />
   </div>
 </template>
 
@@ -28,11 +26,6 @@ export default {
   data() {
     return {
       signedIn: false,
-      services: [
-        {
-          title: "Выход",
-        },
-      ]
     };
   },
 
@@ -44,21 +37,35 @@ export default {
     }
   },
 
+  mounted() {
+    const fullName = localStorage.getItem('fullName');
+    if(fullName){
+      this.updateDropdownData(fullName);
+      this.$refs.dropDown.func = this.SignOut();
+    }
+  },
+
   methods: {
+    updateDropdownData(newTitle){
+      this.$refs.dropDown.title = newTitle;
+    },
     async SignIn() {
       const token = await auth.signIn();
       try {
         const me = await endpoints.getMe(token);
         if (me.status === 200){
           this.signedIn = true;
-
+          await this.signedIn;
+          this.updateDropdownData(me.data.full_name.split(' ', 2).join(' '));
         }
         localStorage.setItem("token", token);
+        localStorage.setItem("fullName", me.data.full_name.split(' ', 2).join(' '));
 
       } catch (error) {
-        if (error.response.status === 403){
+        if (error.response.status == 403){
           const c = await endpoints.createUser(token);
           this.signedIn = true;
+          localStorage.setItem("fullName", me.data.full_name.split(' ', 2).join(' '));
           console.log(c);
           console.log("created user");
         } else {
