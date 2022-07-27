@@ -16,12 +16,13 @@
           <img class="c-image" src="../assets/close.svg" />
         </button>
         <form>
-          <input class="m_name" name="p_name" placeholder="Имя пометки" />
+          <input class="m_name" name="t_name" placeholder="Имя пометки" />
           <VSelect
             :options="options"
             @select="optionSelect"
             :selected="selected"
             class="select"
+            name="select"
           />
           <button type="submit" class="create">Создать</button>
         </form>
@@ -33,7 +34,7 @@
 <script>
 import VSelect from "../layout/VSelect.vue";
 export default {
-  name: "modal",
+  name: "t_modal",
   components: {
     VSelect,
   },

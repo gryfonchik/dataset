@@ -16,10 +16,10 @@
           <img class="c-image" src="../assets/close.svg" />
         </button>
         <form>
-          <input class="m_name" name="p_name" placeholder="Название Dataset" />
+          <input class="m_name" name="d_name" placeholder="Название Dataset" />
           <textarea
             class="m_info"
-            name="p_info"
+            name="d_info"
             placeholder="Описание Dataset"
           />
           <button type="submit" class="create">Создать</button>
@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: "modal",
+  name: "d_modal",
   methods: {
     close() {
       this.$emit("close");

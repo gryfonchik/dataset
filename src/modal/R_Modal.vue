@@ -16,13 +16,27 @@
           <img class="c-image" src="../assets/close.svg" />
         </button>
         <form>
-          <input class="m_name" name="p_name" placeholder="Имя пометки" />
           <VSelect
             :options="options"
             @select="optionSelect"
             :selected="selected"
             class="select"
+            name="select"
           />
+          <div class="input__wrapper">
+            <input
+              class="input__file"
+              type="file"
+              name="file"
+              @change="onFileSelected"
+              ref="fileInput"
+              multiple="true"
+            />
+            <label class="input__file-button" @click="$refs.fileInput.click()">
+              <img class="f_img" src="../assets/cloud.svg" />
+              <span class="input__file-button-text">Добавить изображение</span>
+            </label>
+          </div>
           <button type="submit" class="create">Создать</button>
         </form>
       </div>
@@ -33,12 +47,13 @@
 <script>
 import VSelect from "../layout/VSelect.vue";
 export default {
-  name: "modal",
+  name: "r_modal",
   components: {
     VSelect,
   },
   data() {
     return {
+      selectedFile: null,
       options: [
         { name: "Dataset1", value: 1 },
         { name: "Dataset2", value: 2 },
@@ -54,14 +69,78 @@ export default {
     optionSelect(option) {
       this.selected = option.name;
     },
+    onFileSelected(event) {
+      this.selectedFile=event.target.files[0]
+    }
   },
 };
 </script>
 
 <style scoped>
+.input__wrapper {
+  width: 100%;
+  position: relative;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.input__file {
+  position: absolute;
+  display: none;
+}
+
+.f_img {
+  height:40px;
+  width: 40px;
+  margin-right: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-right: 1px solid #fff;
+  margin-left: 80px;
+}
+
+.input__file-button-text {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.input__file-button {
+  width: 100%;
+  max-width: 500px;
+  height: 50px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 1.125rem;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 0.5px solid #000000;
+  margin-left: 88px;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
+}
 .select {
   margin-top: 22px;
-  margin-left: 93px;
+  margin-left: 88px;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
 }
 

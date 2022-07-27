@@ -19,11 +19,14 @@
         </li>
       </ul>
     </div>
-    <button class="n_but">
-      <img class="n_img" src="../assets/plus.svg" />
-    </button>
+    <Button v-if="component == 'DataRows'" @click="r_showModal" />
+    <Button v-if="component == 'Tag'" @click="t_showModal" />
+    <Button v-if="component == 'Dataset'" @click="d_showModal" />
   </div>
   <component :is="component"></component>
+  <d_modal v-show="d_isModalVisible" @close="d_closeModal" />
+  <t_modal v-show="t_isModalVisible" @close="t_closeModal" />
+  <r_modal v-show="r_isModalVisible" @close="r_closeModal" />
 </template>
 
 <script>
@@ -32,6 +35,10 @@ import Review from "../layout/Review.vue";
 import Tag from "../layout/Tag.vue";
 import DataRows from "../layout/DataRows.vue";
 import Dataset from "../layout/Dataset.vue";
+import Button from "./Button.vue";
+import d_modal from "../modal/D_Modal.vue";
+import t_modal from "../modal/T_Modal.vue";
+import r_modal from "../modal/R_Modal.vue";
 
 export default {
   name: "ProjectNav",
@@ -41,11 +48,38 @@ export default {
     Tag,
     DataRows,
     Dataset,
+    Button,
+    d_modal,
+    t_modal,
+    r_modal,
   },
   data() {
     return {
+      t_isModalVisible: false,
+      d_isModalVisible: false,
+      r_isModalVisible: false,
       component: "Review",
     };
+  },
+  methods: {
+    r_showModal() {
+      this.r_isModalVisible = true;
+    },
+    t_showModal() {
+      this.t_isModalVisible = true;
+    },
+    d_showModal() {
+      this.d_isModalVisible = true;
+    },
+    r_closeModal() {
+      this.r_isModalVisible = false;
+    },
+    t_closeModal() {
+      this.t_isModalVisible = false;
+    },
+    d_closeModal() {
+      this.d_isModalVisible = false;
+    },
   },
 };
 </script>
