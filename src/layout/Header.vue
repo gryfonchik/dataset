@@ -9,7 +9,7 @@
     <div class="nav_logout">
       <div v-if="!signedIn" class="nav_link" @click="SignIn">Вход</div>
     </div>
-    <Dropdown v-if="signedIn" ref="dropDown" title= 'ФИО ПОЛЬЗОВАТЕЛЯ' class="drop" />
+    <Dropdown v-if="signedIn" ref="dropDown" :func="SignOut" title= 'ФИО ПОЛЬЗОВАТЕЛЯ' class="drop" />
   </div>
 </template>
 
@@ -38,10 +38,13 @@ export default {
   },
 
   mounted() {
+    const token = localStorage.getItem('token');
+    if (token){
+      this.signedIn = true;
+    }
     const fullName = localStorage.getItem('fullName');
     if(fullName){
       this.updateDropdownData(fullName);
-      this.$refs.dropDown.func = this.SignOut();
     }
   },
 
@@ -65,6 +68,7 @@ export default {
         if (error.response.status == 403){
           const c = await endpoints.createUser(token);
           this.signedIn = true;
+          localStorage.setItem("token", token);
           localStorage.setItem("fullName", me.data.full_name.split(' ', 2).join(' '));
           console.log(c);
           console.log("created user");
@@ -78,6 +82,7 @@ export default {
     async SignOut(){
       auth.signOut();
       this.signedIn = false;
+      console.log('vishel');
       localStorage.clear();
     },
 

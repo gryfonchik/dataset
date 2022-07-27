@@ -1,5 +1,4 @@
 <template>
-  <form>
     <div class="menu" @click="isOpen = !isOpen">
       <img class="d_img_l" src="../assets/profile.svg" />
       <div class="d_but">
@@ -9,23 +8,21 @@
       <transition name="fade" appear>
         <div class="sub-menu" v-if="isOpen">
           <div>
-            <button id = "exit" class="sub_button" @click="func">Выход</button>
+            <button class="sub_button" @click="func()">Выход</button>
           </div>
         </div>
       </transition>
     </div>
-  </form>
 </template>
 
 <script>
 export default {
   name: "Dropdown",
-  props: ["items"],
+  props: ["items", "func"],
   data() {
     return {
       isOpen: false,
       title: "",
-      func: '',
     };
   },
 };
