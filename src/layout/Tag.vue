@@ -11,6 +11,7 @@
         <img :src="l_selected" />
       </div>
     </div>
+    <div class="ee">
     <div class="right">
       <button class="basket">
         <img class="c-image" src="../assets/basket.svg" />
@@ -18,6 +19,7 @@
       <button class="accept">
         <img class="c-image" src="../assets/accept.svg" />
       </button>
+    </div>
     </div>
   </div>
 </template>
@@ -91,7 +93,7 @@ input:focus::-webkit-input-placeholder {
 }
 
 .right {
-  margin-left: 584px;
+  margin-left: 557px;
   height: 60px;
   display: grid;
   gap: 46px;
@@ -110,5 +112,33 @@ input:focus::-webkit-input-placeholder {
   border: 0;
   cursor: pointer;
   user-select: none;
+}
+@media screen and (max-width: 1520px){
+  .block{
+    width: 1200px;
+  }
+  .right {
+    margin-left: 320px;
+  }
+
+}
+
+@media screen and (max-width: 1260px){
+  .block{
+    width: 1000px;
+  }
+  .right {
+    margin-left: 120px;
+  }
+}
+
+@media screen and (max-width: 1060px){
+  .block{
+    width: 900px;
+  }
+  .right {
+    margin-left: 30px;
+  }
+
 }
 </style>

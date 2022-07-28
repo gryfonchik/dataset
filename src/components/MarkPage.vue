@@ -57,6 +57,9 @@ export default {
   max-width: 1536px;
   margin: auto;
 }
+.right{
+  margin-left: 20px;
+}
 .block {
   width: 120px;
   margin-left: 20px;
@@ -122,12 +125,11 @@ export default {
 .head {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: auto 310px;
+  grid-template-columns: auto auto;
 }
 .list {
-  width: 1334px;
-  height: 800px;
-  max-height: 800px;
+  width: 1280px;
+  height: 720px;
   background: #ffffff;
   margin-right: 20px;
   margin-top: 20px;
@@ -162,6 +164,7 @@ export default {
 }
 .c_button {
   margin-right: 20px;
+  margin-left: 320px;
 }
 .l_button {
   width: 60px;
@@ -210,5 +213,25 @@ export default {
 }
 .l_button:active {
   color: #000000;
+}
+@media screen and (max-width: 1470px){
+  .b_class {
+    margin-left: 400px;
+  }
+  .c_button{
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width: 1240px){
+  .b_class {
+    margin-left: 100px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1080px){
+  .b_class {
+    margin-left: 0px;
+    text-align: center;
+  }
 }
 </style>

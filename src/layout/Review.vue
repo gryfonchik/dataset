@@ -5,11 +5,11 @@
       <div class="values">
         <div>
           <div>10</div>
-          <div class="element">Sent</div>
+          <div class="element">Labeled</div>
         </div>
         <div>
           <div>86</div>
-          <div class="element">In line</div>
+          <div class="element">Unlabeled</div>
         </div>
         <div>
           <div>11.34%</div>
@@ -23,7 +23,6 @@
         <div class="a_grid">
           <div>Name</div>
           <div>Count</div>
-          <div>% share</div>
         </div>
       </div>
       <div class="list">
@@ -33,9 +32,9 @@
             <div class="m">Name</div>
           </div>
           <div class="m">10</div>
-          <div class="m">100.00</div>
         </div>
       </div>
+      
     </div>
   </div>
 </template>
@@ -49,14 +48,14 @@ export default {
 <style scoped>
 .grid {
   display: grid;
-  gap: 100px;
-  grid-template-columns: 710px 690px;
+  grid-template-columns: repeat(auto-fit, minmax(732px, 1fr));
+  
 }
 .a_grid {
   display: grid;
-  gap: 170px;
+  gap: 390px;
   text-align: center;
-  grid-template-columns: 25px 70px 94px;
+  grid-template-columns: 32px 70px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -64,6 +63,11 @@ export default {
   line-height: 14px;
   margin-left: 30px;
   margin-top: 12px;
+}
+.l_block{
+  margin-right: 20px;
+  margin-left: 58px;
+  margin-bottom: 20px;
 }
 .l_head {
   width: 690px;
@@ -76,8 +80,8 @@ export default {
 }
 .l_grid {
   display: grid;
-  gap: 170px;
-  grid-template-columns: 50px 68px 100px;
+  gap: 150px;
+  grid-template-columns: 300px 68px 100px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -148,5 +152,11 @@ export default {
   font-size: 12px;
   line-height: 14px;
   margin-top: 14px;
+}
+@media screen and (max-width: 1500px){
+  .l_block{
+    margin-left: 20px;
+  }
+
 }
 </style>

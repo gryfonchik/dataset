@@ -77,4 +77,31 @@ export default {
   font-family: "Roboto", sans-serif;
   color: #000000;
 }
+
+@media screen and (max-width: 1520px) {
+  .element {
+    width: 1201.5px;
+  }
+  .list {
+    width: 1200px;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .element {
+    width: 1001.5px;
+  }
+  .list {
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .element {
+    width: 901.5px;
+  }
+  .list {
+    width: 900px;
+  }
+}
 </style>

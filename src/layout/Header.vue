@@ -122,7 +122,7 @@ export default {
 .drop {
   float: right;
   margin-right: 40px;
-  width: 300px;
+  max-width: 500px;
   height: 30px;
 }
 .nav {

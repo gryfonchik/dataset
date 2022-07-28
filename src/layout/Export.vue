@@ -17,7 +17,7 @@
       </div>
     </div>
     <div>
-      <button class="c-button" @click="showModal">
+      <button class="c-button">
         <img class="c-image" src="../assets/download.svg" />
         <span class="c-span">Export</span>
       </button>
@@ -60,7 +60,7 @@ export default {
 
 .grid {
   display: grid;
-  grid-template-columns: 750px auto;
+  grid-template-columns: 720px auto;
 }
 .t_grid {
   font-family: "Roboto", sans-serif;
@@ -98,7 +98,7 @@ export default {
   width: 230px;
   height: 56px;
   margin-top: 42px;
-  margin-left: 26px;
+  margin-left: 20px;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
   user-select: none;
 }
@@ -133,5 +133,15 @@ export default {
   height: 30px;
   float: left;
   margin-left: 40px;
+}
+
+@media screen and (max-width: 1060px){
+  .block{
+    width: 650px;
+  }
+  .c-button{
+    margin-left: 0;
+  }
+
 }
 </style>

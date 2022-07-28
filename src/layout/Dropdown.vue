@@ -30,6 +30,8 @@ export default {
 
 <style scoped>
 .sub-menu {
+  margin: auto;
+  text-align: center;
   width: 300px;
   height: 60px;
   overflow: hidden;
@@ -39,16 +41,9 @@ export default {
   position: absolute;
   top: 58px;
 }
-.sub_menu_items {
-  width: 260px;
-  height: 60px;
-  border-radius: 20px;
-  background: #ffffff;
-  text-align: center;
-  color: #000000;
-}
 .sub_button {
   width: 300px;
+  padding: 20px;
   height: 60px;
   border-radius: 20px;
   border: 0;
@@ -64,12 +59,12 @@ export default {
   background: #d5d3d3;
 }
 .menu {
-  width: 300px;
   height: 30px;
-
   cursor: pointer;
 }
 .d_but {
+
+  padding: 20px;
   float: left;
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -78,7 +73,6 @@ export default {
   line-height: 23px;
   background: transparent;
   border: 0;
-  margin-left: 25px;
   padding-top: 4px;
   color: #ffffff;
 }

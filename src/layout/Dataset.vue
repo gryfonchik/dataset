@@ -61,4 +61,30 @@ export default {
   color: #000000;
   text-transform: uppercase;
 }
+@media screen and (max-width: 1520px){
+  .element{
+    width: 1200px;
+  }
+  .list {
+    width: 1200px;
+  }
+}
+
+@media screen and (max-width: 1260px){
+  .element{
+    width: 1000px;
+  }
+  .list {
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1060px){
+  .element{
+    width: 900px;
+  }
+  .list {
+    width: 900px;
+  }
+}
 </style>

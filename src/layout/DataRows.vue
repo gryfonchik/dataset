@@ -7,7 +7,7 @@
           <img class="c-image" src="../assets/filter.svg" />
         </button>
         <button>Labeled</button>
-        <button>Unlabled</button>
+        <button>Unlabeled</button>
       </div>
       <div class="mark">
         <button class="c_button">
@@ -22,29 +22,13 @@
     </div>
     <div class="list">
       <div class="head">
-        <div class="text">Data row ID</div>
-        <div></div>
-        <div>Benchmarks</div>
-        <div></div>
-        <div>Label time</div>
-        <div></div>
-        <div>Review time</div>
-        <div></div>
+        <div >Data row ID</div>
         <div>Dataset</div>
-        <div></div>
         <div>Open issues</div>
       </div>
       <div class="element">
-        <div class="e_text">ID</div>
-        <div></div>
-        <div>-</div>
-        <div></div>
-        <div>1m</div>
-        <div></div>
-        <div>-</div>
-        <div></div>
+        <div>ID</div>
         <div>Label name</div>
-        <div></div>
         <div>No</div>
       </div>
     </div>
@@ -80,7 +64,7 @@ export default {
 }
 .head {
   display: grid;
-  grid-template-columns: 119px 323px 73px 72px 61px 46px 70px 54px 45px 108px 72px;
+  grid-template-columns: 200px auto 200px;
   background: #ecd4ff;
   border: 0.5px solid #000000;
   border-radius: 10px 10px 0px 0px;
@@ -95,6 +79,7 @@ export default {
   font-size: 13px;
   line-height: 15px;
   padding-top: 34px;
+  text-align: center;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
 }
 .text {
@@ -106,9 +91,8 @@ export default {
 }
 .element {
   display: grid;
-  grid-template-columns: 100px 340px 73px 72px 61px 46px 70px 46px 70px 94px 72px;
+  grid-template-columns: 200px auto 200px ;
   width: 1074px;
-  height: 44px;
   background: #ffffff;
   border: 0.5px solid #000000;
   border-radius: 0px;
@@ -118,6 +102,7 @@ export default {
   font-weight: 400;
   font-size: 13px;
   padding-top: 26px;
+  padding-bottom: 26px;
   float: right;
   margin-right: 20px;
   text-align: center;
@@ -168,5 +153,32 @@ button:active {
   height: 60px;
   padding-top: 10px;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 1440px){
+  .element{
+    width: 900px;
+  }
+  .head {
+    width: 900px;
+  }
+}
+
+@media screen and (max-width: 1260px){
+  .element{
+    width: 700px;
+  }
+  .head {
+    width: 700px;
+  }
+}
+
+@media screen and (max-width: 1060px){
+  .element{
+    width: 580px;
+  }
+  .head {
+    width: 580px;
+  }
 }
 </style>
