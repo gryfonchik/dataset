@@ -17,7 +17,11 @@
         </button>
         <form>
           <input class="m_name" name="p_name" placeholder="Project name" />
-        
+          <textarea
+            class="m_info"
+            name="d_info"
+            placeholder="Project description"
+          />
           <button type="submit" class="create">Create</button>
         </form>
       </div>

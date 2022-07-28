@@ -4,21 +4,13 @@
       <div></div>
       <div>Project name</div>
       <div></div>
-      <div>labels</div>
-      <div></div>
-      <div>Uptated</div>
-      <div></div>
-      <div>Teg</div>
+      <div>Project description</div>
     </div>
     <button class="element" type="submit" onclick="document.location='/work'">
       <div></div>
       <div>Project name</div>
       <div></div>
-      <div>10</div>
-      <div></div>
-      <div>Uptated</div>
-      <div></div>
-      <div>Teg</div>
+      <div class="e_d">10</div>
     </button>
   </div>
 </template>
@@ -39,7 +31,7 @@ export default {
   padding-top: 24px;
   padding-bottom: 24px;
   display: grid;
-  grid-template-columns: 25px 118px 456px 42px 192px 68px 80px 2px;
+  grid-template-columns: 25px 118px 456px auto;
   margin-left: 20px;
   width: 1501.5px;
   background: #ffffff;
@@ -60,14 +52,18 @@ export default {
   box-shadow: 0 4px 4px #000000;
 }
 
+.e_d {
+  text-align: left;
+}
+
 .list {
   display: grid;
   padding-top: 12px;
-  grid-template-columns: 36px 90px 477px 42px 196px 53px 90px 23px;
+  grid-template-columns: 36px 90px 477px auto;
   margin-top: 38px;
   margin-left: 20px;
   width: 1500px;
-  height: 28px;
+  padding-bottom: 12px;
   background: #ecd4ff;
   border: 0.5px solid #000000;
   border-radius: 10px 10px 0px 0px;
