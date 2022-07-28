@@ -6,18 +6,21 @@
       <div></div>
       <div>Project description</div>
     </div>
-    <button class="element" type="submit" onclick="document.location='/work'">
-      <div></div>
-      <div>Project name</div>
-      <div></div>
-      <div class="e_d">10</div>
-    </button>
+    <div v-for="item in list" :key="item.id">
+      <button class="element" type="submit" onclick="document.location='/work'">
+        <div></div>
+        <div>{{item.title}}</div>
+        <div></div>
+        <div class="e_d">{{item.description}}</div>
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "ProjectList",
+  props: ["list"],
 };
 </script>
 

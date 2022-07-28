@@ -13,25 +13,53 @@
       <span>create project</span>
     </button>
   </div>
-  <ProjectList />
-  <modal v-show="isModalVisible" @close="closeModal" />
+  <ProjectList :list="projects"/>
+  <modal v-show="isModalVisible" @submit="onSubmit" @close="closeModal" />
 </template>
 
 <script>
 import modal from "../modal/Modal.vue";
 import ProjectList from "../layout/ProjectList.vue";
+import endpoints from "../endpoints";
+
 export default {
   name: "ProjectPage",
   components: {
     ProjectList,
     modal,
   },
+
+  mounted() {
+    const token = localStorage.getItem('token');
+    if(token){
+      this.getProjects(token, 999, 0);
+    }
+  },
+
+
   data() {
     return {
       isModalVisible: false,
+      projects: [],
     };
   },
+  
   methods: {
+    async getProjects(token, limit, offset){
+      const projects = await endpoints.getProjects(token, offset, limit);
+      this.projects = projects.data.items;
+      console.log(this.projects);
+    },
+
+    async onSubmit(data){
+      console.log(data);
+      const token = localStorage.getItem('token');
+      const create = await endpoints.createProject(token, data.projectName, data.description);
+      console.log(create);
+      await this.getProjects();
+      
+    },
+
     showModal() {
       this.isModalVisible = true;
     },

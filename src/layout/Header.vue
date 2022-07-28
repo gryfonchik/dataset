@@ -75,6 +75,7 @@ export default {
       } catch (error) {
         if (error.response.status == 403) {
           const c = await endpoints.createUser(token);
+          const me = await endpoints.getMe(token);
           this.signedIn = true;
           localStorage.setItem("token", token);
           localStorage.setItem(

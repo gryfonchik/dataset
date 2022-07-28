@@ -1,8 +1,9 @@
 import axios from "axios";
+const url = 'http://localhost:8000';
 
 const endpoints = {
     getMe: (token) =>
-    axios.get("https://imct-data-labeling-app.herokuapp.com/v1/me/", {
+    axios.get(url + "/v1/me/", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -10,8 +11,34 @@ const endpoints = {
 
     createUser: (token) =>
     axios.post(
-      "https://imct-data-labeling-app.herokuapp.com/v1/user/",
+      url + "/v1/user/",
       {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    ),
+
+    getProjects: (token, offset, limit) =>
+    axios.get(url + "/v1/project/", {
+      params: {
+        offset: offset,
+        limit: limit,
+      },
+
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }),
+
+    createProject: (token, projectName, description) =>
+    axios.post(
+      url + "/v1/project/",
+      {
+        title: projectName,
+        description: description,
+      },
       {
         headers: {
           Authorization: `Bearer ${token}`,

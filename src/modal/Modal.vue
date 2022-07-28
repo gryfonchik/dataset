@@ -16,13 +16,14 @@
           <img class="c-image" src="../assets/close.svg" />
         </button>
         <form>
-          <input class="m_name" name="p_name" placeholder="Project name" />
+          <input class="m_name" name="p_name" v-model="projectName" placeholder="Project name" />
           <textarea
             class="m_info"
             name="d_info"
             placeholder="Project description"
+            v-model="description"
           />
-          <button type="submit" class="create">Create</button>
+          <button @click="submit" class="create">Create</button>
         </form>
       </div>
     </div>
@@ -32,12 +33,29 @@
 <script>
 export default {
   name: "modal",
+
+  data () {
+    return {
+      projectName: '',
+      description: '',
+    }
+  },
+
   methods: {
     close() {
       this.$emit("close");
     },
-  },
+
+    submit () {
+      this.$emit('submit', {
+        projectName: this.projectName,
+        description: this.description
+      })
+    },
+
+    },
 };
+
 </script>
 
 <style scoped>
