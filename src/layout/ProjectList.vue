@@ -8,10 +8,8 @@
     </div>
     <div v-for="item in list" :key="item.id">
       <button class="element" type="submit" onclick="document.location='/work'">
-        <div></div>
-        <div>{{item.title}}</div>
-        <div></div>
-        <div class="e_d">{{item.description}}</div>
+        <div class="e_d">{{ item.title }}</div>
+        <div class="e_d">{{ item.description }}</div>
       </button>
     </div>
   </div>
@@ -31,10 +29,11 @@ export default {
   margin-right: auto;
 }
 .element {
+  padding-left: 25px;
   padding-top: 24px;
   padding-bottom: 24px;
   display: grid;
-  grid-template-columns: 25px 118px 456px auto;
+  grid-template-columns: 577px auto;
   margin-left: 20px;
   width: 1501.5px;
   background: #ffffff;
@@ -57,6 +56,7 @@ export default {
 
 .e_d {
   text-align: left;
+  padding-right: 25px;
 }
 
 .list {
