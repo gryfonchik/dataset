@@ -1,29 +1,33 @@
 <template>
   <div class="nav">
-  <div class="add_n">
-    <div class="nav_name">
-      <router-link class="nav_link" to="/">название проекта</router-link>
+    <div class="add_n">
+      <div class="nav_name">
+        <router-link class="nav_link" to="/">название проекта</router-link>
+      </div>
+      <div class="nav_name">
+        <router-link class="nav_link" to="project">projects</router-link>
+      </div>
+      <div class="nav_logout">
+        <div v-if="!signedIn" class="nav_link" @click="SignIn">Sign in</div>
+      </div>
     </div>
-    <div class="nav_name">
-      <router-link class="nav_link" to="project">projects</router-link>
-    </div>
-    <div class="nav_logout">
-      <div v-if="!signedIn" class="nav_link" @click="SignIn">Sign in</div>
-    </div>
-    <Dropdown v-if="signedIn" ref="dropDown" title='ФИО ПОЛЬЗОВАТЕЛЯ' class="drop" />
-  </div>
-    <Dropdown v-if="signedIn" ref="dropDown" :func="SignOut" title='ФИО ПОЛЬЗОВАТЕЛЯ' class="drop" />
+    <Dropdown
+      v-if="signedIn"
+      ref="dropDown"
+      :func="SignOut"
+      title="ФИО ПОЛЬЗОВАТЕЛЯ"
+      class="drop"
+    />
   </div>
 </template>
 
 <script>
-import MsalAuth from '../auth';
-import endpoints from '../endpoints';
+import MsalAuth from "../auth";
+import endpoints from "../endpoints";
 import Dropdown from "./Dropdown.vue";
 
 const auth = new MsalAuth();
 export default {
-  
   name: "Header",
 
   data() {
@@ -32,79 +36,81 @@ export default {
     };
   },
 
-
   created() {
-    const token = localStorage.getItem('token');
-    if (token){
+    const token = localStorage.getItem("token");
+    if (token) {
       this.signedIn = true;
     }
   },
 
   mounted() {
-    const token = localStorage.getItem('token');
-    if (token){
+    const token = localStorage.getItem("token");
+    if (token) {
       this.signedIn = true;
     }
-    const fullName = localStorage.getItem('fullName');
-    if(fullName){
+    const fullName = localStorage.getItem("fullName");
+    if (fullName) {
       this.updateDropdownData(fullName);
     }
   },
 
   methods: {
-    updateDropdownData(newTitle){
+    updateDropdownData(newTitle) {
       this.$refs.dropDown.title = newTitle;
     },
     async SignIn() {
       const token = await auth.signIn();
       try {
         const me = await endpoints.getMe(token);
-        if (me.status === 200){
+        if (me.status === 200) {
           this.signedIn = true;
           await this.signedIn;
-          this.updateDropdownData(me.data.full_name.split(' ', 2).join(' '));
+          this.updateDropdownData(me.data.full_name.split(" ", 2).join(" "));
         }
         localStorage.setItem("token", token);
-        localStorage.setItem("fullName", me.data.full_name.split(' ', 2).join(' '));
-
+        localStorage.setItem(
+          "fullName",
+          me.data.full_name.split(" ", 2).join(" ")
+        );
       } catch (error) {
-        if (error.response.status == 403){
+        if (error.response.status == 403) {
           const c = await endpoints.createUser(token);
           this.signedIn = true;
           localStorage.setItem("token", token);
-          localStorage.setItem("fullName", me.data.full_name.split(' ', 2).join(' '));
+          localStorage.setItem(
+            "fullName",
+            me.data.full_name.split(" ", 2).join(" ")
+          );
           console.log(c);
           console.log("created user");
         } else {
-        console.error(error);
+          console.error(error);
         }
       }
-      
     },
 
-    async SignOut(){
+    async SignOut() {
       auth.signOut();
       this.signedIn = false;
-      console.log('vishel');
+      console.log("vishel");
       localStorage.clear();
     },
 
-    async Account(){
-      const token = localStorage.getItem('token');
-      if (token){
-      const user = await endpoints.getMe(token);
-      console.log(user.data);
+    async Account() {
+      const token = localStorage.getItem("token");
+      if (token) {
+        const user = await endpoints.getMe(token);
+        console.log(user.data);
       } else {
-        console.log('Not logged in');
+        console.log("Not logged in");
       }
-    }
+    },
   },
 
   components: {
-    Dropdown
+    Dropdown,
   },
 };
-
 </script>
 
 <style scoped>

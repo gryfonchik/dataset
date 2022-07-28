@@ -9,7 +9,6 @@
       <div class="sub-menu" v-if="isOpen">
         <div>
           <button id="exit" class="sub_button" @click="func">Sign out</button>
-          <button class="sub_button" @click="func()">Выход</button>
         </div>
       </div>
     </transition>
