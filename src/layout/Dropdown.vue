@@ -1,31 +1,32 @@
 <template>
-  <form>
-    <div class="menu" @click="isOpen = !isOpen">
-      <img class="d_img_l" src="../assets/profile.svg" />
-      <div class="d_but">
-        {{ title }}
-      </div>
-      <img class="d_img" src="../assets/h_arrow.svg" />
-      <transition name="fade" appear>
-        <div class="sub-menu" v-if="isOpen">
-          <div>
-            <button id="exit" class="sub_button" @click="func">Sign out</button>
-          </div>
-        </div>
-      </transition>
+  <div class="menu" @click="isOpen = !isOpen">
+    <img class="d_img_l" src="../assets/profile.svg" />
+    <div class="d_but">
+      {{ title }}
     </div>
-  </form>
+    <img class="d_img" src="../assets/h_arrow.svg" />
+    <transition name="fade" appear>
+      <div class="sub-menu" v-if="isOpen">
+        <div>
+          <<<<<<< HEAD
+          <button id="exit" class="sub_button" @click="func">Sign out</button>
+          =======
+          <button class="sub_button" @click="func()">Выход</button>
+          >>>>>>> 745c2722f222612407c83dbed15a1d10833878ba
+        </div>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
 export default {
   name: "Dropdown",
-  props: ["items"],
+  props: ["items", "func"],
   data() {
     return {
       isOpen: false,
       title: "",
-      func: '',
     };
   },
 };
