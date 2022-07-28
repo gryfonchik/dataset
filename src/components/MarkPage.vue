@@ -3,23 +3,23 @@
     <div class="left">
       <div class="block">
         <div class="t_head">
-          <span>Метки</span>
+          <span>Labels</span>
         </div>
         <div class="m_list">
           <button class="m_button">
             <img class="m_img" src="../assets/square.svg" />
-            <span class="m_name">Имя метки</span>
+            <span class="m_name">Label name</span>
           </button>
         </div>
       </div>
       <div class="block">
         <div class="d_head">
-          <span>Найденные</span>
+          <span>Detected</span>
         </div>
         <div class="m_list">
           <button class="m_button">
             <img class="m_img" src="../assets/square.svg" />
-            <span class="m_name">Имя метки</span>
+            <span class="m_name">Label name</span>
           </button>
         </div>
       </div>
@@ -35,8 +35,8 @@
           </button>
         </div>
         <div class="c_button">
-          <button class="l_button">Скип</button>
-          <button class="r_button">Разместить</button>
+          <button class="l_button">Skip</button>
+          <button class="r_button">Submit</button>
         </div>
       </div>
       <div class="list"></div>
@@ -53,7 +53,9 @@ export default {
 <style scoped>
 .grid {
   display: grid;
-  grid-template-columns: 11.81% 88.19%;
+  grid-template-columns: auto auto;
+  max-width: 1536px;
+  margin: auto;
 }
 .block {
   width: 120px;
@@ -64,7 +66,7 @@ export default {
   border-radius: 20px;
 }
 .t_head {
-  margin-left: 36px;
+  text-align: center;
   padding-top: 26px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -73,7 +75,7 @@ export default {
   line-height: 19px;
 }
 .d_head {
-  margin-left: 16px;
+  text-align: center;
   padding-top: 26px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -123,12 +125,13 @@ export default {
   grid-template-columns: auto 310px;
 }
 .list {
-  position: relative;
   width: 1334px;
-  height: 630px;
+  height: 800px;
+  max-height: 800px;
   background: #ffffff;
   margin-right: 20px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 .trans {
   width: 40px;

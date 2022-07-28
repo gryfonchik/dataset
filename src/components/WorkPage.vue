@@ -1,12 +1,14 @@
 <template>
+<div class="m_block">
   <div class="contain">
     <div class="p_name">Имя проекта</div>
     <div>
-      <button type="submit" class="s_button" onclick="document.location='/mark'">Начать маркировку</button>
+      <button type="submit" class="s_button" onclick="document.location='/mark'">Start labeling</button>
     </div>
   </div>
   <div class="p_info">изменить описание проекта</div>
   <ProjectNav />
+  </div>
 </template>
 
 <script>
@@ -20,6 +22,10 @@ export default {
 </script>
 
 <style scoped>
+.m_block{
+ max-width: 1536px;
+ margin: auto;
+}
 .contain {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -48,7 +54,8 @@ export default {
   float: right;
   margin-right: 40px;
   margin-top: 60px;
-  width: 238px;
+  padding-left: 23px;
+  padding-right: 23px;
   height: 40px;
   background: #ffffff;
   border: 0.5px solid #000000;

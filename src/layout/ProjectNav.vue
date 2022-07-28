@@ -3,19 +3,19 @@
     <div class="p_nav">
       <ul class="menu">
         <li>
-          <button class="nav" @click="component = 'Review'">Обзор</button>
+          <button class="nav" @click="component = 'Review'">Dashboard</button>
         </li>
         <li>
           <button class="nav" @click="component = 'Dataset'">Dataset</button>
         </li>
-        <li><button class="nav" @click="component = 'Tag'">Пометки</button></li>
+        <li><button class="nav" @click="component = 'Tag'">Labels</button></li>
         <li>
           <button class="nav" @click="component = 'DataRows'">
-            Строки данных
+            Rows data
           </button>
         </li>
         <li>
-          <button class="nav" @click="component = 'Export'">Экспорт</button>
+          <button class="nav" @click="component = 'Export'">Export</button>
         </li>
       </ul>
     </div>
@@ -113,10 +113,10 @@ export default {
 }
 .n_grid {
   display: grid;
-  grid-template-columns: 760px auto;
+  grid-template-columns: 670px auto;
 }
 .p_nav {
-  width: 740px;
+
   height: 70px;
   background: #ffffff;
   border: 1px solid #7e38c2;

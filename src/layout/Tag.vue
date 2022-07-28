@@ -1,7 +1,7 @@
 <template>
   <div class="block">
     <div class="left">
-      <input class="text" placeholder="Имя пометки" />
+      <input class="text" placeholder="Label name" />
       <div>
         <VSelect
           :options="options"
@@ -36,11 +36,11 @@ export default {
     return {
       isModalVisible: false,
       options: [
-        { name: "Пятиугольник", value: 1 },
-        { name: "Квадрат", value: 2 },
+        { name: "Polygon", value: 1 },
+        { name: "Rectangle", value: 2 },
         { name: "Classification ", value: 3 },
       ],
-      selected: "Пятиугольник",
+      selected: "Polygon",
     };
   },
   methods: {

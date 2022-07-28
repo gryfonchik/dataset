@@ -3,11 +3,11 @@
     <div class="block">
       <div class="t_grid">
         <div></div>
-        <div>Экспорт пометки</div>
+        <div>Label export</div>
         <div></div>
         <div>JSON</div>
       </div>
-      <div class="date">Дата обновления(UTC):</div>
+      <div class="date">Update date(UTC):</div>
       <div class="v_grid">
         <VSelect
           :options="options"
@@ -19,7 +19,7 @@
     <div>
       <button class="c-button" @click="showModal">
         <img class="c-image" src="../assets/download.svg" />
-        <span class="c-span">Экспорт</span>
+        <span class="c-span">Export</span>
       </button>
     </div>
   </div>
@@ -35,11 +35,11 @@ export default {
   data() {
     return {
       options: [
-        { name: "Сегодня", value: 1 },
-        { name: "3 дня", value: 2 },
-        { name: "7 дней", value: 3 },
+        { name: "Today", value: 1 },
+        { name: "Last 3 day", value: 2 },
+        { name: "Last 7 day", value: 3 },
       ],
-      selected: "Сроки экспорта",
+      selected: "Export deadlines",
     };
   },
   methods: {

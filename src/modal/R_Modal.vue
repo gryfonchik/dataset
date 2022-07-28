@@ -34,10 +34,10 @@
             />
             <label class="input__file-button" @click="$refs.fileInput.click()">
               <img class="f_img" src="../assets/cloud.svg" />
-              <span class="input__file-button-text">Добавить изображение</span>
+              <span class="input__file-button-text">Upload images</span>
             </label>
           </div>
-          <button type="submit" class="create">Создать</button>
+          <button type="submit" class="create">Create</button>
         </form>
       </div>
     </div>
@@ -113,6 +113,7 @@ export default {
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
+  margin-left: 50px;
 }
 
 .input__file-button {

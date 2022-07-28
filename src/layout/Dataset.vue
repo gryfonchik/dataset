@@ -2,13 +2,13 @@
   <div class="win">
     <div class="list">
       <div></div>
-      <div>Имя dataset</div>
+      <div>Dataset name</div>
       <div></div>
-      <div>Описание</div>
+      <div>Description</div>
     </div>
     <div class="element" @click="showModal">
       <div></div>
-      <div>Имя проекта</div>
+      <div>Dataset name</div>
       <div></div>
       <div>10</div>
     </div>

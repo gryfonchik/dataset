@@ -5,12 +5,12 @@
         <button type="submit" class="loupe">
           <img class="loupe-image" src="../assets/search.svg" />
         </button>
-        <input name="search" class="search" placeholder="Поиск" type="search" />
+        <input name="search" class="search" placeholder="search" type="search" />
       </div>
     </form>
     <button class="c-button" @click="showModal">
       <img class="c-image" src="../assets/add.svg" />
-      <span>новый проект</span>
+      <span>create project</span>
     </button>
   </div>
   <ProjectList />
@@ -58,6 +58,8 @@ export default {
   display: grid;
   gap: 30px;
   grid-template-columns: auto auto;
+  max-width: 1536px;
+  margin: auto;
 }
 .search {
   width: 150px;
@@ -107,7 +109,7 @@ border: 0;
 span {
   height: 19px;
   margin-top: 7px;
-  margin-right: 22px;
+  margin-right: 18px;
   float: right;
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -135,5 +137,6 @@ span {
   height: 30px;
   float: left;
   margin-left: 13px;
+
 }
 </style>

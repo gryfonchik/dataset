@@ -16,7 +16,7 @@
           <img class="c-image" src="../assets/close.svg" />
         </button>
         <form>
-          <input class="m_name" name="t_name" placeholder="Имя пометки" />
+          <input class="m_name" name="t_name" placeholder="Label name" />
           <VSelect
             :options="options"
             @select="optionSelect"
@@ -24,7 +24,7 @@
             class="select"
             name="select"
           />
-          <button type="submit" class="create">Создать</button>
+          <button type="submit" class="create">Create</button>
         </form>
       </div>
     </div>
@@ -41,11 +41,11 @@ export default {
   data() {
     return {
       options: [
-        { name: "Пятиугольник", value: 1 },
-        { name: "Квадрат", value: 2 },
+        { name: "Polygon", value: 1 },
+        { name: "Rectangle", value: 2 },
         { name: "Classification ", value: 3 },
       ],
-      selected: "Пятиугольник",
+      selected: "Polygon",
     };
   },
   methods: {

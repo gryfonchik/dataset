@@ -3,11 +3,11 @@
     <div class="sort">
       <div class="mark">
         <button class="c_button">
-          <span class="c-span">Все</span>
+          <span class="c-span">Label</span>
           <img class="c-image" src="../assets/filter.svg" />
         </button>
-        <button>Маркированные</button>
-        <button>Немаркированные</button>
+        <button>Labeled</button>
+        <button>Unlabled</button>
       </div>
       <div class="mark">
         <button class="c_button">
@@ -43,9 +43,9 @@
         <div></div>
         <div>-</div>
         <div></div>
-        <div>Имя метки</div>
+        <div>Label name</div>
         <div></div>
-        <div>Нет</div>
+        <div>No</div>
       </div>
     </div>
   </div>

@@ -1,15 +1,17 @@
 <template>
   <div class="nav">
+  <div class="add_n">
     <div class="nav_name">
       <router-link class="nav_link" to="/">название проекта</router-link>
     </div>
     <div class="nav_name">
-      <router-link class="nav_link" to="project">проекты</router-link>
+      <router-link class="nav_link" to="project">projects</router-link>
     </div>
     <div class="nav_logout">
-      <div v-if="!signedIn" class="nav_link" @click="SignIn">Вход</div>
+      <div v-if="!signedIn" class="nav_link" @click="SignIn">Sign in</div>
     </div>
-    <Dropdown v-if="signedIn" ref="dropDown" title= 'ФИО ПОЛЬЗОВАТЕЛЯ' class="drop" />
+    <Dropdown v-if="signedIn" ref="dropDown" title='ФИО ПОЛЬЗОВАТЕЛЯ' class="drop" />
+  </div>
   </div>
 </template>
 
@@ -100,6 +102,10 @@ export default {
 </script>
 
 <style scoped>
+.add_n {
+  max-width: 1536px;
+  margin: auto;
+}
 .drop {
   float: right;
   margin-right: 40px;

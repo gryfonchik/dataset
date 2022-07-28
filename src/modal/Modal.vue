@@ -16,13 +16,9 @@
           <img class="c-image" src="../assets/close.svg" />
         </button>
         <form>
-          <input class="m_name" name="p_name" placeholder="Название проекта" />
-          <textarea
-            class="m_info"
-            name="p_info"
-            placeholder="Описание проекта"
-          />
-          <button type="submit" class="create">Создать</button>
+          <input class="m_name" name="p_name" placeholder="Project name" />
+        
+          <button type="submit" class="create">Create</button>
         </form>
       </div>
     </div>
@@ -65,6 +61,7 @@ export default {
 .create {
   margin-top: 34px;
   margin-left: 476px;
+  margin-bottom: 37px;
   width: 135px;
   height: 38px;
   background: #7d44a9;
@@ -127,7 +124,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 685px;
-  height: 415px;
+
   border: 1px solid #000000;
   border-radius: 20px;
 }

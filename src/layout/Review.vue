@@ -1,36 +1,36 @@
 <template>
   <div class="grid">
     <div class="block">
-      <div class="title">Прогресс маркировки</div>
+      <div class="title">Labeling progress</div>
       <div class="values">
         <div>
           <div>10</div>
-          <div class="element">Отправлено</div>
+          <div class="element">Sent</div>
         </div>
         <div>
           <div>86</div>
-          <div class="element">В очереди</div>
+          <div class="element">In line</div>
         </div>
         <div>
           <div>11.34%</div>
-          <div class="element">Завершено</div>
+          <div class="element">Completed</div>
         </div>
       </div>
     </div>
     <div class="l_block">
       <div class="l_head">
-        <div class="annotation">9 анотаций</div>
+        <div class="annotation">9 label</div>
         <div class="a_grid">
-          <div>Имя</div>
-          <div>Количество</div>
-          <div>% использования</div>
+          <div>Name</div>
+          <div>Count</div>
+          <div>% share</div>
         </div>
       </div>
       <div class="list">
         <div class="l_grid">
           <div class="grid_grid">
             <img class="l-image" src="../assets/square.svg" />
-            <div class="m">Имя</div>
+            <div class="m">Name</div>
           </div>
           <div class="m">10</div>
           <div class="m">100.00</div>
@@ -55,7 +55,8 @@ export default {
 .a_grid {
   display: grid;
   gap: 170px;
-  grid-template-columns: 25px 68px 100px;
+  text-align: center;
+  grid-template-columns: 25px 70px 94px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;

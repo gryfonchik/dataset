@@ -1,24 +1,26 @@
 <template>
-  <div class="list">
-    <div></div>
-    <div>Имя проекта</div>
-    <div></div>
-    <div>Метки</div>
-    <div></div>
-    <div>Обновление</div>
-    <div></div>
-    <div>Тег</div>
+  <div class="block">
+    <div class="list">
+      <div></div>
+      <div>Project name</div>
+      <div></div>
+      <div>labels</div>
+      <div></div>
+      <div>Uptated</div>
+      <div></div>
+      <div>Teg</div>
+    </div>
+    <button class="element" type="submit" onclick="document.location='/work'">
+      <div></div>
+      <div>Project name</div>
+      <div></div>
+      <div>10</div>
+      <div></div>
+      <div>Uptated</div>
+      <div></div>
+      <div>Teg</div>
+    </button>
   </div>
-  <button class="element" type="submit" onclick="document.location='/work'">
-    <div></div>
-    <div>Имя проекта</div>
-    <div></div>
-    <div>10</div>
-    <div></div>
-    <div>Обновление</div>
-    <div></div>
-    <div>Тег</div>
-  </button>
 </template>
 
 <script>
@@ -28,13 +30,18 @@ export default {
 </script>
 
 <style scoped>
+.block {
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .element {
   padding-top: 24px;
+  padding-bottom: 24px;
   display: grid;
-  grid-template-columns: 25px 111px 466px 42px 186px 53px 98px 23px;
+  grid-template-columns: 25px 118px 456px 42px 192px 68px 80px 2px;
   margin-left: 20px;
-  width: 1501.4px;
-  height: 70px;
+  width: 1501.5px;
   background: #ffffff;
   border: 0.5px solid #000000;
   font-style: normal;
