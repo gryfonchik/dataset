@@ -15,26 +15,22 @@
       <button class="basket">
         <img class="c-image" src="../assets/basket.svg" />
       </button>
-      <button class="accept" @click="showModal">
+      <button class="accept">
         <img class="c-image" src="../assets/accept.svg" />
       </button>
     </div>
   </div>
-  <modal v-show="isModalVisible" @close="closeModal" />
 </template>
 
 <script>
 import VSelect from "./VSelect.vue";
-import modal from "../modal/T_Modal.vue";
 export default {
   name: "Tag",
   components: {
     VSelect,
-    modal,
   },
   data() {
     return {
-      isModalVisible: false,
       options: [
         { name: "Polygon", value: 1 },
         { name: "Rectangle", value: 2 },
@@ -44,12 +40,6 @@ export default {
     };
   },
   methods: {
-    showModal() {
-      this.isModalVisible = true;
-    },
-    closeModal() {
-      this.isModalVisible = false;
-    },
     optionSelect(option) {
       this.selected = option.name;
     },

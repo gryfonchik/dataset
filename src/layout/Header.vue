@@ -10,12 +10,9 @@
     <div class="nav_logout">
       <div v-if="!signedIn" class="nav_link" @click="SignIn">Sign in</div>
     </div>
-<<<<<<< HEAD
     <Dropdown v-if="signedIn" ref="dropDown" title='ФИО ПОЛЬЗОВАТЕЛЯ' class="drop" />
   </div>
-=======
-    <Dropdown v-if="signedIn" ref="dropDown" :func="SignOut" title= 'ФИО ПОЛЬЗОВАТЕЛЯ' class="drop" />
->>>>>>> 745c2722f222612407c83dbed15a1d10833878ba
+    <Dropdown v-if="signedIn" ref="dropDown" :func="SignOut" title='ФИО ПОЛЬЗОВАТЕЛЯ' class="drop" />
   </div>
 </template>
 

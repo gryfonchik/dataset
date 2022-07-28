@@ -8,11 +8,8 @@
     <transition name="fade" appear>
       <div class="sub-menu" v-if="isOpen">
         <div>
-          <<<<<<< HEAD
           <button id="exit" class="sub_button" @click="func">Sign out</button>
-          =======
           <button class="sub_button" @click="func()">Выход</button>
-          >>>>>>> 745c2722f222612407c83dbed15a1d10833878ba
         </div>
       </div>
     </transition>

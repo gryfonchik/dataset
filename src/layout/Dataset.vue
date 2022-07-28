@@ -6,36 +6,18 @@
       <div></div>
       <div>Description</div>
     </div>
-    <div class="element" @click="showModal">
+    <div class="element">
       <div></div>
       <div>Dataset name</div>
       <div></div>
       <div>10</div>
     </div>
-    <modal v-show="isModalVisible" @close="closeModal" />
   </div>
 </template>
 
 <script>
-import modal from "../modal/D_Modal.vue";
 export default {
   name: "Dataset",
-  components: {
-    modal,
-  },
-  data() {
-    return {
-      isModalVisible: false,
-    };
-  },
-  methods: {
-    showModal() {
-      this.isModalVisible = true;
-    },
-    closeModal() {
-      this.isModalVisible = false;
-    },
-  },
 };
 </script>
 

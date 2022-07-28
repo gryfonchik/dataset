@@ -105,7 +105,7 @@ export default {
 
 .c-span {
   height: 19px;
-  margin-right: 34px;
+  margin-right: 46px;
   float: right;
   font-family: "Roboto", sans-serif;
   font-style: normal;
