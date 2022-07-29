@@ -12,7 +12,7 @@
     </button>
   </div>
   <ProjectList :list="filteredProjects"/>
-  <modal v-show="isModalVisible" @submit="onSubmit" @close="closeModal" />
+  <modal titlePlaceholder="Project name" textareaPlaceholder="Project description" v-show="isModalVisible" @submit="onSubmit" @close="closeModal" />
 </template>
 
 <script>
@@ -60,7 +60,7 @@ export default {
       const token = localStorage.getItem('token');
       const create = await endpoints.createProject(token, data.title, data.description);
       console.log(create);
-      await this.getProjects();
+      await this.getProjects(token, 999, 0);
       
     },
 

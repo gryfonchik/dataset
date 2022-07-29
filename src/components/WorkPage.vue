@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="p_info">{{project.description}}</div>
-  <ProjectNav />
+  <ProjectNav :datasetList="datasets" @createDataset="onCreateDataset" />
   </div>
 </template>
 
@@ -30,12 +30,14 @@ created() {
     const token = localStorage.getItem('token');
     if (projectId){
       this.getProject(token, projectId);
+      this.getDatasets(token, projectId, 0, 999); 
     }
 },
 
 data() {
   return {
     project: {},
+    datasets: [],
   }
 },
 
@@ -45,6 +47,21 @@ methods: {
     this.project = project.data;
     console.log(project);
   },
+
+  async onCreateDataset(data){
+    console.log(data);
+    const token = localStorage.getItem('token');
+    const create = await endpoints.createDataset(token, data.title, data.description, this.project.id);
+    this.getDatasets(token, this.project.id, 0, 999);
+    console.log(create);
+  },
+
+  async getDatasets(token, projectId, offset, limit){
+    const datasets = await endpoints.getDatasets(token, projectId, offset, limit);
+    this.datasets = datasets.data.items;
+    console.log('this.datasets : ');
+    console.log(this.datasets);
+  }
 }
 
 };

@@ -15,11 +15,11 @@
         >
           <img class="c-image" src="../assets/close.svg" />
         </button>
-          <input class="m_name" name="p_name" v-model="title" placeholder="Project name" />
+          <input class="m_name" name="p_name" v-model="title" v-bind:placeholder="titlePlaceholder" />
           <textarea
             class="m_info"
             name="d_info"
-            placeholder="Project description"
+            v-bind:placeholder="textareaPlaceholder"
             v-model="description"
           />
           <button @click="submit" class="create">Create</button>
@@ -31,6 +31,8 @@
 <script>
 export default {
   name: "modal",
+
+  props: ["titlePlaceholder", 'textareaPlaceholder'],
 
   data () {
     return {
@@ -49,6 +51,7 @@ export default {
         title: this.title,
         description: this.description
       })
+      this.$emit("close");
     },
 
     },

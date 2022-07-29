@@ -6,11 +6,11 @@
       <div></div>
       <div>Description</div>
     </div>
-    <div class="element">
+    <div v-for="item in list" :key="item.id" class="element">
       <div></div>
-      <div>Dataset name</div>
+      <div>{{item.title}}</div>
       <div></div>
-      <div>10</div>
+      <div>{{item.description}}</div>
     </div>
   </div>
 </template>
@@ -18,6 +18,7 @@
 <script>
 export default {
   name: "Dataset",
+  props: ["list"],
 };
 </script>
 

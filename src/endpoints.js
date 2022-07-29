@@ -55,6 +55,36 @@ const endpoints = {
         },
       }
     ),
+
+    createDataset: (token, datasetName, description, projectId) =>
+    axios.post(
+      url + "/v1/dataset/",
+      {
+        obj_in: {
+          title: datasetName,
+          description: description,
+        },
+        project_id: projectId,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    ),
+
+    getDatasets: (token, projectId, offset, limit) =>
+    axios.get(url + "/v1/dataset/", {
+      params: {
+        project_id: projectId,
+        offset: offset,
+        limit: limit,
+      },
+
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }),
     
   exist: (token) =>
     axios.get("/api/current-user-exist/", {

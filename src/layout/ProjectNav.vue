@@ -23,8 +23,8 @@
     <Button v-if="component == 'Tag'" @click="t_showModal" />
     <Button v-if="component == 'Dataset'" @click="d_showModal" />
   </div>
-  <component :is="component"></component>
-  <d_modal v-show="d_isModalVisible" @close="d_closeModal" />
+  <component :list="datasetList" :is="component"></component>
+  <Modal titlePlaceholder="Dataset name" textareaPlaceholder="Dataset description" v-show="d_isModalVisible" @submit="onDatasetSubmit" @close="d_closeModal" />
   <t_modal v-show="t_isModalVisible" @close="t_closeModal" />
   <r_modal v-show="r_isModalVisible" @close="r_closeModal" />
 </template>
@@ -39,6 +39,8 @@ import Button from "./Button.vue";
 import d_modal from "../modal/D_Modal.vue";
 import t_modal from "../modal/T_Modal.vue";
 import r_modal from "../modal/R_Modal.vue";
+import Modal from "../modal/Modal.vue";
+import endpoints from "../endpoints";
 
 export default {
   name: "ProjectNav",
@@ -52,7 +54,10 @@ export default {
     d_modal,
     t_modal,
     r_modal,
+    Modal,
   },
+  emits: ['createDataset'],
+  props: ['datasetList'],
   data() {
     return {
       t_isModalVisible: false,
@@ -62,6 +67,15 @@ export default {
     };
   },
   methods: {
+
+    async onDatasetSubmit(data){
+      this.$emit('createDataset', data);
+      //console.log(data);
+      //const token = localStorage.getItem('token');
+      //const create = await endpoints.createDataset(token, data.title, data.description);
+      //console.log(create);
+    },
+
     r_showModal() {
       this.r_isModalVisible = true;
     },
