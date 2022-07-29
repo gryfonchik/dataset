@@ -57,7 +57,7 @@ export default {
   max-width: 1536px;
   margin: auto;
 }
-.right{
+.right {
   margin-left: 20px;
 }
 .block {
@@ -214,21 +214,21 @@ export default {
 .l_button:active {
   color: #000000;
 }
-@media screen and (max-width: 1470px){
+@media screen and (max-width: 1470px) {
   .b_class {
     margin-left: 400px;
   }
-  .c_button{
+  .c_button {
     margin-left: 0px;
   }
 }
-@media screen and (max-width: 1240px){
+@media screen and (max-width: 1240px) {
   .b_class {
     margin-left: 100px;
     text-align: center;
   }
 }
-@media screen and (max-width: 1080px){
+@media screen and (max-width: 1080px) {
   .b_class {
     margin-left: 0px;
     text-align: center;

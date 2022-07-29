@@ -15,7 +15,6 @@
         >
           <img class="c-image" src="../assets/close.svg" />
         </button>
-        <form>
           <input class="m_name" name="p_name" v-model="title" placeholder="Project name" />
           <textarea
             class="m_info"
@@ -24,7 +23,6 @@
             v-model="description"
           />
           <button @click="submit" class="create">Create</button>
-        </form>
       </div>
     </div>
   </transition>
