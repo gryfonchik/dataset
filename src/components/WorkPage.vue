@@ -1,23 +1,52 @@
 <template>
 <div class="m_block">
   <div class="contain">
-    <div class="p_name">Имя проекта</div>
+    <div class="p_name">{{project.title}}</div>
     <div>
       <button type="submit" class="s_button" onclick="document.location='/mark'">Start labeling</button>
     </div>
   </div>
-  <div class="p_info">изменить описание проекта</div>
+  <div class="p_info">{{project.description}}</div>
   <ProjectNav />
   </div>
 </template>
 
 <script>
 import ProjectNav from "../layout/ProjectNav.vue";
+import endpoints from "../endpoints";
+
 export default {
   name: "WorkPage",
   components: {
     ProjectNav,
 },
+
+created() {
+    const windowData = Object.fromEntries(
+      new URL(window.location).searchParams.entries()
+    );
+    const projectId = windowData['id'];
+    console.log('projctid: ' + projectId)
+    const token = localStorage.getItem('token');
+    if (projectId){
+      this.getProject(token, projectId);
+    }
+},
+
+data() {
+  return {
+    project: {},
+  }
+},
+
+methods: {
+  async getProject(token, projectId){
+    const project = await endpoints.getProject(token, projectId);
+    this.project = project.data;
+    console.log(project);
+  },
+}
+
 };
 </script>
 

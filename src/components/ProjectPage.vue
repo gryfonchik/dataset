@@ -60,7 +60,7 @@ export default {
     async onSubmit(data){
       console.log(data);
       const token = localStorage.getItem('token');
-      const create = await endpoints.createProject(token, data.projectName, data.description);
+      const create = await endpoints.createProject(token, data.title, data.description);
       console.log(create);
       await this.getProjects();
       

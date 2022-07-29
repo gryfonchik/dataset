@@ -34,6 +34,14 @@ const endpoints = {
       },
     }),
 
+    getProject: (token, id) =>
+    axios.get(url + "/v1/project/" + id, {
+
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }),
+
     createProject: (token, projectName, description) =>
     axios.post(
       url + "/v1/project/",

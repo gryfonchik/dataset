@@ -16,7 +16,7 @@
           <img class="c-image" src="../assets/close.svg" />
         </button>
         <form>
-          <input class="m_name" name="p_name" v-model="projectName" placeholder="Project name" />
+          <input class="m_name" name="p_name" v-model="title" placeholder="Project name" />
           <textarea
             class="m_info"
             name="d_info"
@@ -36,7 +36,7 @@ export default {
 
   data () {
     return {
-      projectName: '',
+      title: '',
       description: '',
     }
   },
@@ -48,7 +48,7 @@ export default {
 
     submit () {
       this.$emit('submit', {
-        projectName: this.projectName,
+        title: this.title,
         description: this.description
       })
     },

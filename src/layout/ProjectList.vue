@@ -7,7 +7,7 @@
       <div>Project description</div>
     </div>
     <div v-for="item in list" :key="item.id">
-      <button class="element" type="submit" onclick="document.location='/work'">
+      <button class="element" type="submit" @click="this.$router.push('/work?id=' + item.id)">
         <div class="e_d">{{ item.title }}</div>
         <div class="e_d">{{ item.description }}</div>
       </button>
