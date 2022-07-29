@@ -4,14 +4,14 @@
         <button type="submit" class="loupe">
           <img class="loupe-image" src="../assets/search.svg" />
         </button>
-        <input name="search" class="search" placeholder="search" type="search" />
+        <input name="search" class="search" placeholder="search" v-model="filter" type="search" />
       </div>
     <button class="c-button" @click="showModal">
       <img class="c-image" src="../assets/add.svg" />
       <span>create project</span>
     </button>
   </div>
-  <ProjectList :list="projects"/>
+  <ProjectList :list="filteredProjects"/>
   <modal v-show="isModalVisible" @submit="onSubmit" @close="closeModal" />
 </template>
 
@@ -39,7 +39,13 @@ export default {
     return {
       isModalVisible: false,
       projects: [],
+      filter: '',
     };
+  },
+  computed: {
+    filteredProjects(){
+      return this.projects.filter(project => project.title.toLowerCase().includes(this.filter.toLowerCase()) || project.description.toLowerCase().includes(this.filter.toLowerCase()));
+    },
   },
   
   methods: {
