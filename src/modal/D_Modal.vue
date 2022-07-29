@@ -15,7 +15,6 @@
         >
           <img class="c-image" src="../assets/close.svg" />
         </button>
-        <form>
           <input class="m_name" name="d_name" placeholder="Dataset name" />
           <textarea
             class="m_info"
@@ -23,7 +22,6 @@
             placeholder="Dataset description"
           />
           <button type="submit" class="create">Create</button>
-        </form>
       </div>
     </div>
   </transition>

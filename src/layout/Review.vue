@@ -49,7 +49,6 @@ export default {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(732px, 1fr));
-  
 }
 .a_grid {
   display: grid;
@@ -156,6 +155,10 @@ export default {
 @media screen and (max-width: 1500px){
   .l_block{
     margin-left: 20px;
+  }
+  .grid {
+    margin-left: auto;
+    margin-right: auto;
   }
 
 }

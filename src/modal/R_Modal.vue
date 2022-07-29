@@ -15,7 +15,6 @@
         >
           <img class="c-image" src="../assets/close.svg" />
         </button>
-        <form>
           <VSelect
             :options="options"
             @select="optionSelect"
@@ -38,7 +37,6 @@
             </label>
           </div>
           <button type="submit" class="create">Create</button>
-        </form>
       </div>
     </div>
   </transition>

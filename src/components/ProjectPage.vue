@@ -1,13 +1,11 @@
 <template>
   <div class="contain">
-    <form action="" method="post">
       <div class="s_grid">
         <button type="submit" class="loupe">
           <img class="loupe-image" src="../assets/search.svg" />
         </button>
         <input name="search" class="search" placeholder="search" type="search" />
       </div>
-    </form>
     <button class="c-button" @click="showModal">
       <img class="c-image" src="../assets/add.svg" />
       <span>create project</span>
