@@ -1,5 +1,7 @@
 import axios from "axios";
 const url = 'http://localhost:8000';
+//'http://localhost:8000';
+//'https://imct-data-labeling-app.herokuapp.com';
 
 const endpoints = {
     getMe: (token) =>
